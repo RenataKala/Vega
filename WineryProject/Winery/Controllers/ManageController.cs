@@ -10,7 +10,7 @@ using Winery.Models;
 
 namespace Winery.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin,Manager")]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
