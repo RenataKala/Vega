@@ -1,4 +1,6 @@
 ﻿using System;
+using DL;
+using DL.AspNetIdentity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;

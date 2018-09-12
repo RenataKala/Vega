@@ -15,6 +15,7 @@ namespace DL
         : base(AppConfiguration.ConnectionString)
         {
         }
+
         public DbSet<BottleSize> BottleSizes { get; set; }
         public DbSet<Region> Regions { get; set; }
         public DbSet<SubType> SubTypes { get; set; }

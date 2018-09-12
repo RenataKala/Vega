@@ -21,5 +21,19 @@ namespace DL
         {
             get { return "WineryDB"; }
         }
+
+        public static string AspIdentityConnectionString
+        {
+            get
+            {
+                return ConfigurationManager.ConnectionStrings[AspIdentityConnectionStringName].ConnectionString;
+            }
+        }
+
+
+        public static string AspIdentityConnectionStringName
+        {
+            get { return "WineryDB"; }
+        }
     }
 }
