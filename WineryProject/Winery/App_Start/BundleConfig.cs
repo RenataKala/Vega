@@ -25,6 +25,13 @@ namespace Winery
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/style").Include(
+                    "~/Content/winery.css",
+                    "~/Content/bootstrap4.css",
+                    "~/Content/font-awesome.min.css"
+
+                  ));
         }
     }
 }
