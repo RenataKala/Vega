@@ -5,6 +5,90 @@
     ViewBag.Title = "Админ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<header id="main-header" class="py-2 bg-info text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><i class="fa fa-gear mr-5"></i>DASHBOARD</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="row py-5">
+    <div class="col-3">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Dashboard</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Wine</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Orders</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Users</a>
+            <a class="nav-link" id="v-pills-stats-tab" data-toggle="pill" href="#v-pills-stats" role="tab" aria-controls="v-pills-stats" aria-selected="false">Stats</a>
+            
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+               @*BOXES*@
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card text-center bg-primary text-white mb-3">
+                                <div class="card-body">
+                                    <h3>WINE</h3>
+                                    <h1 class="display-4">
+                                        <i class="fa fa-pencil"></i>
+                                    </h1>
+                                    <a href="@Url.Action("Index","AdminWine")" class="btn btn-outline-light btn-lg">MENAGE</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center bg-success text-white mb-3">
+                                <div class="card-body">
+                                    <h3>ORDERS</h3>
+                                    <h1 class="display-4">
+                                        <i class="fa fa-folder-open-o"></i>
+                                    </h1>
+                                    <a href="#" class="btn btn-outline-light btn-lg">MENAGE</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center bg-warning text-white mb-3">
+                                <div class="card-body">
+                                    <h3>USERS</h3>
+                                    <h1 class="display-4">
+                                        <i class="fa fa-heart"></i>
+                                    </h1>
+                                    <a href="#" class="btn btn-outline-light btn-lg">MENAGE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<h2 class="py-3 text-center">@ViewBag.Title</h2>
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-stats" role="tabpanel" aria-labelledby="v-pills-stats-tab">...</div>
+        </div>
+    </div>
+</div>
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+
+            </div>
+            <div class="col-md-8">
+
+
+            </div>
+        </div>
+    </div>*@
+
+
+
+
 
