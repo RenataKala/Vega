@@ -9,7 +9,7 @@ namespace BL.Interfaces
 {
     public interface IWineRepository
     {
-        IQueryable<Wine> GetAll();
+        List<Wine> GetAll();
         Wine GetByID(int ID);
         void Insert(Wine wine);
         void Update(Wine wine);

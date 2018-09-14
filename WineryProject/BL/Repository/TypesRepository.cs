@@ -9,15 +9,18 @@ using System.Threading.Tasks;
 
 namespace BL.Repository
 {
-    public class TypeRepository : ITypesRepository
+    public class TypesRepository : ITypesRepository
     {
 
         private WineryDB db;
-        public TypeRepository()
+        public TypesRepository()
         {
             db = new WineryDB();
         }
-
+        public List<Types> GetTypes()
+        {
+            return db.Types.ToList();
+        }
         public void Delete(Types type)
         {
             if (type == null) return;

@@ -18,5 +18,10 @@ namespace DL.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImagePath { get; set; }
+
+        //mapped
+        public virtual Types Types { get; set; }
+        //mapped
+        public virtual SubType SubTypes { get; set; }
     }
 }

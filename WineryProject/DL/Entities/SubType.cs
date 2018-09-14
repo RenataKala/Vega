@@ -10,5 +10,7 @@ namespace DL.Entities
     {
         public int SubTypeID { get; set; }
         public string SubTypeName { get; set; }
+        //mapped
+        public ICollection<Wine> Wines { get; set; }
     }
 }

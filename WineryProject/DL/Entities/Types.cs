@@ -11,6 +11,8 @@ namespace DL.Entities
         {
             public int TypeID { get; set; }
             public string TypeName { get; set; }
+
+            public ICollection<Wine> Wines { get; set; }
         }
     
 }

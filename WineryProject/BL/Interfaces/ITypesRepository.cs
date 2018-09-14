@@ -16,5 +16,6 @@ namespace BL.Interfaces
         void Delete(Types type);
         void Delete(int typeID);
         bool Exists(int typeID);
+        List<Types> GetTypes();
     }
 }

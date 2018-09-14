@@ -37,9 +37,9 @@ namespace BL.Repository
         }
 
       
-        public IQueryable<Wine> GetAll()
+        public List<Wine> GetAll()
         {
-            return db.Wines;
+            return db.Wines.ToList();
         }
 
         public Wine GetByID(int ID)
