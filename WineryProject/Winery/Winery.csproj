@@ -224,6 +224,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dashboard.css" />
+    <Content Include="Content\images\1.jpg" />
+    <Content Include="Content\images\photo-1506377247377-2a5b3b417ebb.jpg" />
     <Content Include="Content\winery.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
