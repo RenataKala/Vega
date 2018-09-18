@@ -3,15 +3,43 @@
     <div class="container " id="primary">
         <div class="row ">  
             <div class="pt-5 text-right ">
-                <h1 class="display-4  py-5 text-light font-weight-bold ">TASTY WINES</h1>
+                <h1 class="display-4  py-5 text-danger font-weight-bold ">TASTY WINES</h1>
             </div>
                 
         </div>
     </div>
 </section>
-
+@*WINE SELECTION SECTION*@ 
 <section class="py-3 bg-light">
-    <div class="container">
+    <div class="container-fluid">
+        <div class="row">
+               <button class="mr-2">Red </button>
+                <button class="mr-2">White </button>
+                <button class="mr-2">Rose </button>            
+         
+                <button class="mr-2"><</button>
+                <button class="mr-2">> </button>            
+        </div>
+
+        <div class="row">
+            <button class="mr-2 mt-2">Sparkling</button>
+            <button class="mt-2">Dessert </button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+tuka ke bide naseto partial view so izbranoto vino gore na kopcinajta
+            </div>
+            <div class="col-md-6">
+                <img  class="img-fluid" src="~/Content/images/download.jpg" />
+            </div>
+        </div>
+    </div>
+</section>
+
+@*ABOUT VEGA SECTION*@
+<section class="py-3 bg-light">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 align-self-center">
                 <h1 class="pb-5 text-center">
@@ -20,7 +48,7 @@
                     Wines
                 </h1>
                 <p class="pb-1">For Clif Family, winemaking is simple. Delicious wines begin with the best fruit. So we keep a keen eye on the vineyards, ensuring their health and vitality, and make our wines with minimal intervention for a true expression of the grape’s character. Since we love to eat, we craft all of our wines to be food-friendly and highly enjoyable. </p>
-                <a href="#" class="btn btn-secondary btn-lg">Check our wines</a>
+                <a href="#" class="btn btn-danger btn-lg">Check our wines</a>
             </div>
             <div class="col-md-6">
                 <img src="~/Content/images/photo-1506377247377-2a5b3b417ebb.jpg" class="img-fluid img-thumbnail" alt="">
