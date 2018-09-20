@@ -46,7 +46,7 @@ namespace BL.Repository
 
         public BottleSize GetByID(int ID)
         {
-            throw new NotImplementedException();
+            return db.BottleSizes.SingleOrDefault(w => w.BottleSizeID == ID);
         }
 
         public void Insert(BottleSize bottlesize)

@@ -16,11 +16,13 @@ namespace Winery.Controllers
         private readonly IWineRepository _wineRepository;
         private readonly ISubTypeRepository _subTypeRepository;
         private readonly ITypesRepository _typeRepository;
+        private readonly IBottleSize _bottleSizeRepository;
         public AdminController()
         {
             _wineRepository = new WineRepository();
             _subTypeRepository = new SubTypeRepository();
             _typeRepository = new TypesRepository();
+            _bottleSizeRepository = new BottleSizeRerpository();
         }
         // GET: Admin
         public ActionResult Index()
@@ -99,6 +101,43 @@ namespace Winery.Controllers
             _typeRepository.Delete(id);
 
             return RedirectToAction("GetAllTypes");            
+
+        }
+
+        [HttpGet]
+        public ActionResult BottleSize()
+        {
+            var sizes = _bottleSizeRepository.GetAll()
+                .Select(t=> new BottleSizeViewModel {
+                    BottleSizeID = t.BottleSizeID,
+                    Size = t.Size
+                }).ToList();
+
+            return View(sizes);
+        }
+
+
+        [HttpPost]
+        public string AddNewSize(string sizeNum)
+        {
+            string id;
+            if (_bottleSizeRepository.GetAll().Any(t => t.Size == sizeNum))
+            {
+                return "This Bottle Size already exists";
+            }
+            BottleSize bs = new BottleSize();
+            bs.Size =  sizeNum;
+
+            _bottleSizeRepository.Insert(bs);
+
+            id = bs.BottleSizeID.ToString();
+            return id;
+        }
+        public ActionResult DeleteBottleSize(int id)
+        {
+            _bottleSizeRepository.Delete(id);
+
+            return RedirectToAction("BottleSize");
 
         }
     }

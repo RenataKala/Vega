@@ -8,6 +8,6 @@ namespace Winery.Models
     public class BottleSizeViewModel
     {
         public int BottleSizeID { get; set; }
-        public int Size { get; set; }
+        public string Size { get; set; }
     }
 }

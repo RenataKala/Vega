@@ -341,6 +341,7 @@
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\Admin\GetAllSubTypes.cshtml" />
     <Content Include="Views\AdminWine\Index.cshtml" />
+    <Content Include="Views\Admin\BottleSize.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

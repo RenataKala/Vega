@@ -45,7 +45,7 @@ namespace DL.Maps
             Property(w => w.Name).HasMaxLength(15).IsRequired();
             Property(w => w.RegionID).IsRequired();
             Property(w => w.CountryID).IsRequired();
-            Property(w => w.BottleSizeID).IsRequired();
+         
             Property(w => w.ImagePath).HasMaxLength(128).IsRequired();
             Property(w => w.Description).HasMaxLength(4096).IsRequired();
             Property(w => w.Vintage).IsRequired();

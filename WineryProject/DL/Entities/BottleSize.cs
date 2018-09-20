@@ -9,7 +9,7 @@ namespace DL.Entities
     public class BottleSize
     {
         public int BottleSizeID { get; set; }
-        public int Size { get; set; }
+        public string Size { get; set; }
 
         public ICollection<Wine> Wines { get; set; }
     }

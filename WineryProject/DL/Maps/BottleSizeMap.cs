@@ -21,7 +21,7 @@ namespace DL.Maps
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             //Properties
-            Property(w => w.Size).IsRequired();
+            Property(w => w.Size).HasMaxLength(15).IsRequired();
         }
     }
 }
