@@ -232,6 +232,7 @@
     <Content Include="Content\dashboard.css" />
     <Content Include="Content\img\6.jpg" />
     <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\index.jpg" />
     <Content Include="Content\winery.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />

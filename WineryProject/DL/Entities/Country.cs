@@ -10,5 +10,7 @@ namespace DL.Entities
     {
         public int CountryID{ get; set; }
         public string CountryName {get; set; }
+
+        public ICollection<Wine> Wines { get; set; }
     }
 }

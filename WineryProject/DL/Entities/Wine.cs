@@ -23,5 +23,11 @@ namespace DL.Entities
         public virtual Types Types { get; set; }
         //mapped
         public virtual SubType SubTypes { get; set; }
+        //mapped
+        public virtual Country Countrys { get; set; }
+        //mapped
+        public virtual Region Regions { get; set; }
+        //mapped
+        public virtual BottleSize BottleSizes { get; set; }
     }
 }

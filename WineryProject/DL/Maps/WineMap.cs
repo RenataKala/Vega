@@ -29,6 +29,18 @@ namespace DL.Maps
                .WithMany(t => t.Wines)
                .WillCascadeOnDelete(false);
 
+            HasRequired(t => t.Regions)
+               .WithMany(t => t.Wines)
+               .WillCascadeOnDelete(false);
+
+            HasRequired(t => t.Countrys)
+               .WithMany(t => t.Wines)
+               .WillCascadeOnDelete(false);
+
+            HasRequired(t => t.BottleSizes)
+               .WithMany(t => t.Wines)
+               .WillCascadeOnDelete(false);
+
 
             Property(w => w.Name).HasMaxLength(15).IsRequired();
             Property(w => w.RegionID).IsRequired();
