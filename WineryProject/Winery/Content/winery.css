@@ -1,12 +1,7 @@
-﻿#primary {
-    background-image: url('../Content/images/1.jpg');
-    background-size: cover;
-    background-repeat:no-repeat;
-    opacity:0.7;
-    height:300px;
+﻿
 
+span.ajax-text{
+    display: none;
 }
 
-.caption {
 
-}

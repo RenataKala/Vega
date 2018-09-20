@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Winery.Models;
-using DL.Entities;
+
 
 namespace Winery.Controllers
 {
@@ -25,6 +25,7 @@ namespace Winery.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+           
             return View();
         }
 
@@ -58,9 +59,11 @@ namespace Winery.Controllers
                     TypeID = t.TypeID,
                     TypeName = t.TypeName
                 }).ToList();
-            return PartialView("_GetAllTypes", types);
+            return View("GetAllTypes", types);
         }
 
+
+     
         public ActionResult GetAllSubTypes()
         {
             var types = _subTypeRepository.GetAll()
@@ -69,7 +72,34 @@ namespace Winery.Controllers
                     SubTypeID = t.SubTypeID,
                     SubTypeName = t.SubTypeName
                 }).ToList();
-            return PartialView("_GetAllSubTypes", types);
+            return View("GetAllSubTypes", types);
+        }
+
+        [HttpPost]
+        public string AddNewType(string catName)
+        {
+            string id;
+            if(_typeRepository.GetTypes().Any(t=>t.TypeName == catName))
+            {
+                return "titletaken";
+            }
+            Types types = new Types();
+            types.TypeName = catName;
+
+           _typeRepository.Insert(types);
+
+            id = types.TypeID.ToString();
+            return id;
+        }
+
+
+
+        public ActionResult DeleteType(int id)
+        {
+            _typeRepository.Delete(id);
+
+            return RedirectToAction("GetAllTypes");            
+
         }
     }
 }

@@ -10,8 +10,5 @@ namespace DL.Entities
     {
         public int BottleSizeID { get; set; }
         public int Size { get; set; }
-
-        //mapped
-        public ICollection<Wine> Wines { get; set; }
     }
 }

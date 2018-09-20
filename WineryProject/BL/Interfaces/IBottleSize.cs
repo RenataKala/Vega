@@ -16,7 +16,5 @@ namespace BL.Interfaces
         void Delete(BottleSize bottlesize);
         void Delete(int region);
         bool Exists(int region);
-
-       
     }
 }

@@ -205,6 +205,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\BottleSizeViewModel.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -217,6 +218,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\1.jpg" />
+    <Content Include="Content\img\2.jpg" />
+    <Content Include="Content\img\3.jpg" />
+    <Content Include="Content\img\4.jpg" />
+    <Content Include="Content\img\5.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -224,9 +230,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dashboard.css" />
-    <Content Include="Content\images\1.jpg" />
-    <Content Include="Content\images\download.jpg" />
-    <Content Include="Content\images\photo-1506377247377-2a5b3b417ebb.jpg" />
+    <Content Include="Content\img\6.jpg" />
+    <Content Include="Content\img\ajax-loader.gif" />
     <Content Include="Content\winery.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -274,6 +279,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -328,11 +334,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\AdminWine\Index.cshtml" />
     <Content Include="Views\Admin\_ListAllWines.cshtml" />
-    <Content Include="Views\Admin\_GetAllTypes.cshtml" />
-    <Content Include="Views\Admin\_GetAllSubTypes.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\GetAllTypes.cshtml" />
+    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\Admin\GetAllSubTypes.cshtml" />
+    <Content Include="Views\AdminWine\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
