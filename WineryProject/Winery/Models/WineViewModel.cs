@@ -24,6 +24,7 @@ namespace Winery.Models
             Name = wine.Name;
             Description = wine.Description;
             ImagePath = wine.ImagePath;
+
             
         }
 
@@ -38,6 +39,7 @@ namespace Winery.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImagePath { get; set; }
+        public HttpPostedFileBase File { get; set; }
 
 
         public string Types { get; set; }

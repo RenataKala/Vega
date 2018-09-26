@@ -1,0 +1,234 @@
+﻿@model Winery.Models.WineViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="container" id="boxes">
+    <div class="row">
+
+        @*<div class="col-md-4">
+                <div class="card text-center bg-secondary text-white my-3">
+                    <div class="card-body">
+                        <h3>List of all wines</h3>
+                        <h1 class="display-4">
+                            <i class="fa fa-pencil"></i><span>5</span>
+                        </h1>
+                        <a href="@Url.Action("ListAllWines","Admin")" class="btn btn-outline-light btn-lg">Check</a>
+                    </div>
+                </div>
+            </div>*@
+
+
+
+
+        <div class="form-group">
+            <label for="title">Name </label>
+            <input id="name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">Description </label>
+            <textarea id="desc" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="title">TypeID</label>
+            <input id="type" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">SubtypeID</label>
+            <input id="subtype" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">BottleSizeID</label>
+            <input id="bs" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">RegionID</label>
+            <input id="region" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">CountryID</label>
+            <input id="country" type="text" class="form-control">
+        </div>
+        @*<div class="form-group">
+                <label for="title">Imgpath </label>
+                <input id="imgpath" type="text" class="form-control">
+            </div>*@
+        <div class="form-group">
+            <label for="title">Vintage</label>
+            <input id="vintage" type="text" class="form-control">
+        </div>
+
+
+    </div>
+
+    <form class="py-5 text-capitalize text-center" action="UploadWineImage" method="post" enctype="multipart/form-data">
+
+        <input type="file" name="file" id="file" />
+
+        <input type="submit" value="Upload image" />
+    </form>
+
+
+
+
+
+    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary" onclick="addWine()" data-dismiss="modal">Add</button>
+
+</div>
+
+<div class="row">
+
+    @*@foreach (var item in Model.Types)
+        {
+            <div class="col-sm-3">
+                <img class="img-circle" src="~/Content/img/1.jpg" alt="red wine" width="140" height="140">
+                <h2 class="">@item</h2>
+
+                <a class="btn btn-lg btn-info" href="#">List red wines</a>
+            </div>
+        }*@
+
+    <div class="col-sm-4">
+        <img class="img-circle" src="~/Content/img/1.jpg" alt="red wine" width="140" height="140">
+        <h2 class="">Red --> <span>5</span></h2>
+
+        <a class="btn btn-lg btn-info" href="#">List red wines</a>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-circle" src="~/Content/img/2.jpg" alt="red wine" width="140" height="140">
+        <h2 class="">White - <span>5</span></h2>
+
+        <a class="btn btn-lg btn-info" href="#">List white wines</a>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-circle" src="~/Content/img/4.jpg" alt="red wine" width="140" height="140">
+        <h2 class="">Rose - <span>5</span></h2>
+
+        <a class="btn btn-lg btn-info" href="#">List rose wines</a>
+    </div>
+
+    <div class="pt-5 col-sm-4">
+        <img class="img-circle" src="~/Content/img/3.jpg" alt="red wine" width="140" height="140">
+        <h2 class="">Sparkling - <span>5</span></h2>
+
+        <a class="btn btn-lg btn-info" href="#">List sparkling wines</a>
+    </div>
+    <div class="pt-5 col-sm-4">
+        <img class="img-circle" src="~/Content/img/5.jpg" alt="red wine" width="140" height="140">
+        <h2 class="">Dessert - <span>5</span></h2>
+
+        <a class="btn btn-lg btn-info" href="#">List dessert wines</a>
+    </div>
+
+    <div class=" pt-5 col-sm-4">
+        <img class="img-circle" src="~/Content/img/6.jpg" alt="red wine" width="140" height="140">
+        <h2 class="">All - <span>55</span></h2>
+
+        <a class="btn btn-lg btn-info" href="@Url.Action("ListAllWines","Admin")">List All wines</a>
+    </div>
+
+
+
+</div>
+    </div>
+@*ADD WINE MODAL*@
+<div class="modal fade" id="addWineModal">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Add wine</h5>
+                <button class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="title">Name </label>
+                    <input id="name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">Description </label>
+                    <textarea id="desc" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">TypeID</label>
+                    <input id="type" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">SubtypeID</label>
+                    <input id="subtype" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">BottleSizeID</label>
+                    <input id="bs" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">RegionID</label>
+                    <input id="region" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">CountryID</label>
+                    <input id="country" type="text" class="form-control">
+                </div>
+                @*<div class="form-group">
+                        <label for="title">Imgpath </label>
+                        <input id="imgpath" type="text" class="form-control">
+                    </div>*@
+                <div class="form-group">
+                    <label for="title">Vintage</label>
+                    <input id="vintage" type="text" class="form-control">
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <form class="py-5 text-capitalize text-center" action="UploadWineImage" method="post" enctype="multipart/form-data">
+
+                    <input type="file" name="file" id="file" />
+
+                    <input type="submit" value="Upload image" />
+                </form>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" onclick="addWine()" data-dismiss="modal">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+     function addWine() {
+        var Name = $("#name").val();
+        var TypeID = $("#type").val();
+        var SubtypeID = $("#subtype").val();
+        var Description = $("#desc").val();
+        var Vintage = $("#vintage").val();
+        var BottleSizeID = $("#bs").val();
+        var RegionID = $("#region").val();
+        var CountryID = $("#country").val();
+        var ImagePath = $("#file").val();
+         var data = {
+             Name: Name, TypeID: TypeID, SubTypeID: SubtypeID, Description: Description, Vintage: Vintage, BottleSizeID : BottleSizeID,
+             RegionID: RegionID, CountryID: CountryID,ImagePath:ImagePath
+         };
+          $.ajax({
+            url: '@Url.Action("AddWine","AdminWine")',
+                type: "Post",
+                data:data,
+                dataType: "text/html",
+            success: function (response) {
+
+            }
+        });
+    }
+</script>
+

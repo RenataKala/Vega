@@ -342,9 +342,12 @@
     <Content Include="Views\Admin\GetAllSubTypes.cshtml" />
     <Content Include="Views\AdminWine\Index.cshtml" />
     <Content Include="Views\Admin\BottleSize.cshtml" />
+    <Content Include="Views\AdminWine\UploadWineImage.cshtml" />
+    <Content Include="Views\AdminWine\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
