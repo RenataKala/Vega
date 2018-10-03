@@ -234,7 +234,13 @@
     <Content Include="Content\img\6.jpg" />
     <Content Include="Content\img\ajax-loader.gif" />
     <Content Include="Content\img\burinja.jpg" />
+    <Content Include="Content\img\cudak.jpg" />
+    <Content Include="Content\img\dvor.jpg" />
+    <Content Include="Content\img\Grapes-and-Grains-Trail.jpg" />
+    <Content Include="Content\img\grozje.jfif" />
+    <Content Include="Content\img\grozje1.jpg" />
     <Content Include="Content\img\index.jpg" />
+    <Content Include="Content\img\vinoicasi.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -250,6 +256,7 @@
     <Content Include="Content\vendor\jquery\jquery.slim.js" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Content\winery.css" />
+    <Content Include="Content\img\winetasting.jpg" />
     <Content Include="css\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
