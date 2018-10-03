@@ -1,128 +1,223 @@
-﻿@*CAPTION SECTION*@
-<section>
-    <div class="container " id="primary">
-        <div class="row ">
-            <div class="pt-5 text-right ">
-                <h1 class="display-4  py-5 text-danger font-weight-bold ">TASTY WINES</h1>
-            </div>
+﻿<head>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WELCOME TO OUR WINERY</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/content/css/modern-business.css" rel="stylesheet">
+
+</head>
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image">
+                <img src="~/Content/img/burinja.jpg" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>First Slide</h3>
+                    <p>This is a description for the first slide.</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Second Slide</h3>
+                    <p>This is a description for the second slide.</p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Third Slide</h3>
+                    <p>This is a description for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+
+<body>
+
+<!-- Page Content -->
+<div class="container">
+
+    <h1 class="my-4">Welcome to Modern Business</h1>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Card Title</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Card Title</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Card Title</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
         </div>
     </div>
-</section>
-@*WINE SELECTION SECTION*@
-<section class="py-3 bg-light">
-    <div class="container-fluid">
-        <div class="row">
-            <button class="mr-2">Red </button>
-            <button class="mr-2">White </button>
-            <button class="mr-2">Rose </button>
+    <!-- /.row -->
+    <!-- Portfolio Section -->
+    <h2>Portfolio Heading</h2>
 
-            <button class="mr-2"><</button>
-            <button class="mr-2">> </button>
-        </div>
-        <div class="row">
-            <button class="mr-2 mt-2">Sparkling</button>
-            <button class="mt-2">Dessert </button>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                tuka ke bide naseto partial view so izbranoto vino gore na kopcinajta
-            </div>
-            <div class="col-md-6">
-                <img class="img-fluid" src="~/Content/img/1.jpg" />
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project One</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-@*ABOUT VEGA SECTION*@
-<section class="py-3 bg-light">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 align-self-center">
-                <h1 class="pb-5 text-center">
-                    Vega,
-                    Small Production
-                    Wines
-                </h1>
-                <p class="pb-1">For Clif Family, winemaking is simple. Delicious wines begin with the best fruit. So we keep a keen eye on the vineyards, ensuring their health and vitality, and make our wines with minimal intervention for a true expression of the grape’s character. Since we love to eat, we craft all of our wines to be food-friendly and highly enjoyable. </p>
-                <a href="#" class="btn btn-danger btn-lg">Check our wines</a>
-            </div>
-            <div class="col-md-6">
-                <img src="~/Content/images/photo-1506377247377-2a5b3b417ebb.jpg" class="img-fluid img-thumbnail" alt="">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project Two</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class="py-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Our partners</h3>
-                <ul>
-                    <li class="py-3">
-                        Bube Tosheva,
-                        Napa Valley, Sauvignon Blanc
-                    </li>
-                    <li class="py-3">
-                        Bube Tosheva,
-                        Napa Valley, Sauvignon Blanc
-                    </li>
-                    <li class="py-3">
-                        Bube Tosheva,
-                        Napa Valley, Sauvignon Blanc
-                    </li>
-                    <li class="py-3">
-                        Bube Tosheva,
-                        Napa Valley, Sauvignon Blanc
-                    </li>
-                </ul>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project Three</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+                </div>
             </div>
-            <div class="col-md-6">
-                @*tuka mozete nekoj slajder nesto*@
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project Four</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project Five</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">Project Six</a>
+                    </h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<section></section>
-
-@*<body>
-    <div id="primary"class=" text-light">
-
-        <p @*style="background-image :url(Grapes.jpg)"*@
-@*Vega,
-                Small Production
-                Wines
-            </p>
-
-    <h2>Food Friendly Wines</h2>
-
-    <p>
-        For us, winemaking is simple. Delicious wines begin with the best fruit. So we keep a keen eye on the vineyards,
-        ensuring their health and vitality, and make our wines with minimal intervention for a true expression of the grape’s character.
-        Since we love to eat, we craft all of our wines to be food-friendly and highly enjoyable.
-    </p>
-
-    <h2>Vineyards & Appelations</h2>
-
-    <p>
-        From the rocky coastline of Mendocino to the majestic slopes of Howell Mountain, Clif Family strives to give each of our wines a sense of place. We hope that when you open a bottle of Clif Family wine, you enjoy the nuances of the different microclimates and complex geographies that our grapes hail from.
-
-        Our own Clif Family Vineyards consist of ten acres of certified organic Cabernet Sauvignon and Zinfandel grapes in the Napa Valley Appellation. Working with our vineyard management team and our grower partners from Mendocino and Napa Valley, we produce wines with the finest of fruit.
-    </p>
-
-    <div>
-        OUR PARTNERS
-        Bube Tosheva,
-        Napa Valley, Sauvignon Blanc
-        Marija Dudan
-        Mendocino County, Grenache
-        Renata Kalamatkovska,
-        Howell Mountain AVA, Zinfandel
-        Sanja Mitanoska,
-        Anderson Valley AVA, Mendocino County, Gewurztraminer
-        Fane Kanevcheva Iloska,
-        Oak Knoll District, Napa Valley, Viognier
-
-    </div>
+    <!-- /.row -->
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Modern Business Features</h2>
+            <p>The Modern Business template by Start Bootstrap includes:</p>
+            <ul>
+                <li>
+                    <strong>Bootstrap v4</strong>
+                </li>
+                <li>jQuery</li>
+                <li>Font Awesome</li>
+                <li>Working contact form with validation</li>
+                <li>Unstyled page elements for easy customization</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
         </div>
-    </body>*@
+        <div class="col-lg-6">
+            <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="~/content/vendor/jquery/jquery.min.js"></script>
+<script src="~/content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
