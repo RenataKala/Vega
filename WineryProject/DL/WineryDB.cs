@@ -21,6 +21,7 @@ namespace DL
         public DbSet<SubType> SubTypes { get; set; }
         public DbSet<Types> Types { get; set; }
         public DbSet<Wine> Wines { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -30,6 +31,7 @@ namespace DL
             modelBuilder.Configurations.Add(new SubTypeMap());
             modelBuilder.Configurations.Add(new TypeMap());
             modelBuilder.Configurations.Add(new WineMap());
+            modelBuilder.Configurations.Add(new CountriesMap());
 
 
         }

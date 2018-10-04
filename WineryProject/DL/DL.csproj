@@ -65,6 +65,7 @@
     <Compile Include="Entities\Types.cs" />
     <Compile Include="Entities\Wine.cs" />
     <Compile Include="Maps\BottleSizeMap.cs" />
+    <Compile Include="Maps\CountriesMap.cs" />
     <Compile Include="Maps\RegionMap.cs" />
     <Compile Include="Maps\SubTypeMap.cs" />
     <Compile Include="Maps\TypeMap.cs" />

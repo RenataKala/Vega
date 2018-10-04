@@ -7,47 +7,53 @@
 
 <div class="container">
     <div class="row py-5">
+
         <div class="col-md-4 border-right">
-            <h3>Add new region</h3>
-            
-            <input type="text" id="region" placeholder="Enter region name" />
-            <a href="#" onclick="addRegion()">Add</a>
+            <div class="form-group">
+                <label class="display-4 text-left" for="inputsm">Add new region</label>
+                <input class="form-control input-form-control-lg" id="region" type="text" placeholder="Enter region name">
+                <button class="btn btn-md  mt-2 text-center" onclick="addRegion()">Add</button>
+            </div>            
         </div>
+
         <div class="col-md-8">
-     
+
             <div class="row listregions">
                 @foreach (var item in Model)
                 {
 
-                    <div id="DIV_@item.RegionID"class="col-md-3 m-1 py-3 text-center">
+                    <div id="DIV_@item.RegionID" class="col-md-3 m-1 py-3 text-justify">
                         <span class="h3">@Html.DisplayFor(modelItem => item.RegionName)</span>
-                        <button class="btn btn-light mt-2 delete" onclick="deleteRegion(@item.RegionID)" >Delete</button>
+                        <button class="btn btn-light m-2 delete" onclick="deleteRegion(@item.RegionID)">Delete</button>
                     </div>
-                                       
-                }
-            </div>             
 
+                }
+                <div id="newRegion"></div>
             </div>
+
+        </div>
     </div>
 </div>
 <script>
-    function addRegion() {
+    function addRegion(id) {
         var region = $("#region").val();
 
-        var data = { RegionName: region };
+        var data = { RegionName: region, RegionID: id };
           $.ajax({
             url: '@Url.Action("AddRegion","AdminRegionCountry")',
                 type: "Post",
                 data:data,
                 
-            success: function (response) {
+              success: function (response) {
+
+                  $("#newRegion").html(`
+                        <div id="DIV_"class="col-md-3 m-1 py-3 text-center">
+                        <span class="h3">${region}</span>
+                        <button class="btn btn-light mt-2 delete" onclick="deleteRegion(${id})" >Delete</button>
+                    </div>
+                `);
                 alert("Region added");
-                //var toAppend = $("#DIV_").clone();
-                //var listregions = $(".listregions");
-                //toAppend.attr("RegionID", "id_" + response);
-                //toAppend.find("#item_RegionName").val(region);
-                //toAppend.find(".delete").attr("href", "/admin/deleteregion/" + data);
-                //listregions.append(toAppend);
+                           
                 }
         });
     }
