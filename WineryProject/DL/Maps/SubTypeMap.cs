@@ -20,7 +20,7 @@ namespace DL.Maps
             Property(w => w.SubTypeID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             //Properties
-            Property(w => w.SubTypeName).HasMaxLength(20).IsRequired();
+            Property(w => w.SubTypeName).HasMaxLength(50).IsRequired();
         }
     }
 }

@@ -24,76 +24,57 @@ namespace Winery.Controllers.Admin
         {
             return View();
         }
-        public ActionResult AddWine(WineViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
+        //public ActionResult AddWine(WineViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
 
-            }
-            if (model.File.ContentLength > 0)
-            {
-                var uploadedPath = "~/Content/img/uploads/";
-                var fileName = Path.GetFileName(model.File.FileName);
-                model.ImagePath = uploadedPath + fileName;
+        //    }
+        //    if (model.File.ContentLength > 0)
+        //    {
+        //        var uploadedPath = "~/Content/img/uploads/";
+        //        var fileName = Path.GetFileName(model.File.FileName);
+        //        model.ImagePath = uploadedPath + fileName;
 
-                fileName = Path.Combine(Server.MapPath(uploadedPath), fileName);
-                model.File.SaveAs(fileName);
+        //        fileName = Path.Combine(Server.MapPath(uploadedPath), fileName);
+        //        model.File.SaveAs(fileName);
 
 
-            }
+        //    }
 
-            WineViewModel wine = new WineViewModel
-            {
-                WineID = model.WineID,
-                TypeID = model.TypeID,
-                SubTypeID = model.SubTypeID,
-                RegionID = model.RegionID,
-                CountryID = model.CountryID,
-                BottleSizeID = model.BottleSizeID,
-                Vintage = model.Vintage,
-                Name = model.Name,
-                Description = model.Description,
-                ImagePath = model.ImagePath,
+        //    WineViewModel wine = new WineViewModel
+        //    {
+        //        WineID = model.WineID,
+        //        TypeID = model.TypeID,
+        //        SubTypeID = model.SubTypeID,
+        //        RegionID = model.RegionID,
+        //        CountryID = model.CountryID,
+        //        BottleSizeID = model.BottleSizeID,
+        //        Vintage = model.Vintage,
+        //        Name = model.Name,
+        //        Description = model.Description,
+        //        ImagePath = model.ImagePath,
               
-            };
+        //    };
 
-            _wineRepository.Insert(new Wine
-            {
-                WineID = wine.WineID,
-                TypeID = wine.TypeID,
-                SubTypeID = wine.SubTypeID,
-                RegionID = wine.RegionID,
-                CountryID = wine.CountryID,
-                BottleSizeID = wine.BottleSizeID,
-                Vintage = wine.Vintage,
-                Name = wine.Name,
-                Description = wine.Description,
-                ImagePath = wine.ImagePath
+        //    _wineRepository.Insert(new Wine
+        //    {
+        //        WineID = wine.WineID,
+        //        TypeID = wine.TypeID,
+        //        SubTypeID = wine.SubTypeID,
+        //        RegionID = wine.RegionID,
+        //        CountryID = wine.CountryID,
+        //        BottleSizeID = wine.BottleSizeID,
+        //        Vintage = wine.Vintage,
+        //        Name = wine.Name,
+        //        Description = wine.Description,
+        //        ImagePath = wine.ImagePath
 
-            });
-            return View("Index");
-        }
-        [HttpPost]
-        public ActionResult UploadWineImage(WineViewModel model)
-        {
-
-            if (model.File.ContentLength > 0)
-            {
-                var uploadedPath = "~/Content/img/uploads/";
-                var fileName = Path.GetFileName(model.File.FileName);
-                model.ImagePath = uploadedPath + fileName;
-
-                fileName = Path.Combine(Server.MapPath(uploadedPath), fileName);
-                model.File.SaveAs(fileName);
-
-
-            }
-
-            return View("UploadWineImage");
-        }
-
-
+        //    });
+        //    return View("Index");
+        //}
+        
         public ActionResult Create()
         {
             return View(new WineViewModel());

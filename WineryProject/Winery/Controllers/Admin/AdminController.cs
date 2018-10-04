@@ -63,8 +63,6 @@ namespace Winery.Controllers
                 }).ToList();
             return View("GetAllTypes", types);
         }
-
-
      
         public ActionResult GetAllSubTypes()
         {
@@ -94,14 +92,35 @@ namespace Winery.Controllers
             return id;
         }
 
+        [HttpPost]
+        public string AddNewSubType(string catName)
+        {
+            string id;
+            if (_subTypeRepository.GetAll().Any(t => t.SubTypeName == catName))
+            {
+                return "titletaken";
+            }
+            SubType subtypes = new SubType();
+            subtypes.SubTypeName = catName;
 
+            _subTypeRepository.Insert(subtypes);
+
+            id = subtypes.SubTypeID.ToString();
+            return id;
+        }
 
         public ActionResult DeleteType(int id)
         {
             _typeRepository.Delete(id);
 
-            return RedirectToAction("GetAllTypes");            
+            return RedirectToAction("GetAllTypes"); 
+        }
 
+        public ActionResult DeleteSubType(int id)
+        {
+            _subTypeRepository.Delete(id);
+
+            return RedirectToAction("GetAllSubTypes");
         }
 
         [HttpGet]
