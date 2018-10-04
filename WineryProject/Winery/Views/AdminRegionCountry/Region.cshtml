@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Winery.Models.RegionViewModel>
+
+@{
+    ViewBag.Title = "Region";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row py-5">
+        <div class="col-md-4 border-right">
+            <h3>Add new region</h3>
+            
+            <input type="text" id="region" placeholder="Enter region name" />
+            <a href="#" onclick="addRegion()">Add</a>
+        </div>
+        <div class="col-md-8">
+     
+            <div class="row listregions">
+                @foreach (var item in Model)
+                {
+
+                    <div id="DIV_@item.RegionID"class="col-md-3 m-1 py-3 text-center">
+                        <span class="h3">@Html.DisplayFor(modelItem => item.RegionName)</span>
+                        <button class="btn btn-light mt-2 delete" onclick="deleteRegion(@item.RegionID)" >Delete</button>
+                    </div>
+                                       
+                }
+            </div>             
+
+            </div>
+    </div>
+</div>
+<script>
+    function addRegion() {
+        var region = $("#region").val();
+
+        var data = { RegionName: region };
+          $.ajax({
+            url: '@Url.Action("AddRegion","AdminRegionCountry")',
+                type: "Post",
+                data:data,
+                
+            success: function (response) {
+                alert("Region added");
+                //var toAppend = $("#DIV_").clone();
+                //var listregions = $(".listregions");
+                //toAppend.attr("RegionID", "id_" + response);
+                //toAppend.find("#item_RegionName").val(region);
+                //toAppend.find(".delete").attr("href", "/admin/deleteregion/" + data);
+                //listregions.append(toAppend);
+                }
+        });
+    }
+
+     function deleteRegion(id) {
+        $.ajax({
+            url: '@Url.Action("DeleteRegion","AdminRegionCountry")' + '/' + id,
+            data: { id: id },
+            success: function (response) {
+                $("#DIV_" + id).html(" ");
+                alert("Region deleted");
+            }
+        });
+    }
+</script>

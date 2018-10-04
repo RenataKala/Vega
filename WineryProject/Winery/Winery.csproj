@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminRegionCountryController.cs" />
     <Compile Include="Controllers\Admin\AdminWineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -377,6 +378,8 @@
     <Content Include="Views\Admin\BottleSize.cshtml" />
     <Content Include="Views\AdminWine\UploadWineImage.cshtml" />
     <Content Include="Views\AdminWine\Create.cshtml" />
+    <Content Include="Views\AdminRegionCountry\Region.cshtml" />
+    <Content Include="Views\AdminRegionCountry\Country.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
