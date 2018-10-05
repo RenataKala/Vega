@@ -6,20 +6,22 @@
 }
 
 
-
-<div class="col-md-4 border-right">
-    <div class="form-group">
-        <label class="display-4 text-left" for="inputsm">Add new country</label>
-        <input class="form-control input-form-control-lg" id="country" type="text" placeholder="Enter country name">
-        <button class="btn btn-md  mt-2 text-center" onclick="addCountry()">Add</button>
+<div class="row">
+    <div class="col-md-4 border-right">
+        <div class="form-group">
+            <label class="display-4 text-left" for="inputsm">Add new country</label>
+            <input class="form-control input-form-control-lg" id="country" type="text" placeholder="Enter country name">
+            <button class="btn btn-md  mt-2 text-center" onclick="addCountry()">Add</button>
+        </div>
     </div>
+    <div class="col-md-6"
+         id="alertdiv"></div>
+
 </div>
+
 <table class="table" id="countryTable">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CountryID)
-        </th>
-        <th>
+       <th>
             @Html.DisplayNameFor(model => model.CountryName)
         </th>
         <th></th>
@@ -29,21 +31,19 @@
     {
         <tr id="id_@item.CountryID">
             <td>
-                @Html.DisplayFor(modelItem => item.CountryID)
+                @Html.EditorFor(modelItem => item.CountryName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CountryName)
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "DeleteCountry", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "DeleteCountry", new { id = item.CountryID }, new { @class = "delete" })
             </td>
         </tr>
     }
 
 </table>
 <script>
-    function addCountry() {
+       function addCountry() {
         var country = $("#country").val();
+        var alertdiv = $("#alertdiv");
 
         var data = { CountryName: country};
           $.ajax({
@@ -52,22 +52,31 @@
                 data:data,
 
               success: function (response) {
+                  //alert("Country added");
+                  var data = response.trim();
 
-                alert("Country added");
+                  if (data === "This country is already on the list")
+                  {
+                      alertdiv.html(`<div class="alert alert-danger display-4 mt-4" role="alert">
+                          This country is already on the list </div >`);                     
+                  }
+                  else {
+                      alertdiv.html(`<div class="alert alert-success display-4 mt-5" role="alert">
+                            You successfully added new country.</div>`);
 
+                  
+                  var table = $("#countryTable tbody");
+                  var toAppend = $("#countryTable tbody tr:last").clone();
+                  toAppend.attr("CountryID", "id_" + response);
+                  toAppend.find("#item_CountryName").val(country);
+                  toAppend.find("a.delete").attr("href", "/adminregioncountry/deletecountry/" + response);
+                   table.append(toAppend);
+                  }
                 }
-        });
-    }
+            });
+    }   
 
-     function deleteCountry(id) {
-        $.ajax({
-            url: '@Url.Action("DeleteCountry","AdminRegionCountry")' + '/' + id,
-            data: { id: id },
-            success: function (response) {
-                $("#DIV_" + id).html(" ");
-                alert("Country deleted");
-            }
-        });
-    }
+  
+
 </script>
 

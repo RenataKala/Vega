@@ -67,11 +67,12 @@ namespace Winery.Controllers.Admin
             _regionRepository.Delete(id);
             return RedirectToAction("Region");
         }
-        public ActionResult AddCountry(CountryViewModel model)
+        public string AddCountry(CountryViewModel model)
         {
-            if (!ModelState.IsValid)
+           
+            if(db.Countries.Any(t=>t.CountryName == model.CountryName))
             {
-                return View(model);
+                return "This country is already on the list";
             }
             CountryViewModel country = new CountryViewModel()
             {
@@ -85,12 +86,14 @@ namespace Winery.Controllers.Admin
             });
             db.SaveChanges();
 
-            return RedirectToAction("Country");
+            return "";
         }
 
         public ActionResult DeleteCountry(int id)
         {
-            var country = db.Countries.Any(t => t.CountryID == id);
+            var country = db.Countries.Find(id);
+            db.Countries.Remove(country);
+            db.SaveChanges();
 
             return RedirectToAction("Country");
         }
