@@ -391,6 +391,7 @@
     <Content Include="Views\AdminWine\Create.cshtml" />
     <Content Include="Views\AdminRegionCountry\Region.cshtml" />
     <Content Include="Views\AdminRegionCountry\Country.cshtml" />
+    <Content Include="Views\Admin\_CountAllWines.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
