@@ -160,6 +160,20 @@ namespace Winery.Controllers
 
         }
 
+        public string RenameType( string NewCatName, int id)
+        {
+            if(_typeRepository.GetTypes().Any(t=>t.TypeName == NewCatName))
+            {
+                return "Type name already exists";
+            }
+            Types type = _typeRepository.GetByID(id);
+            type.TypeName = NewCatName;
+            _typeRepository.Update(type);
+
+            return "";         
+
+        }
+
      
     }
 }

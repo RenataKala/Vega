@@ -71,9 +71,6 @@ namespace BL.Repository
             throw new NotImplementedException();
         }
 
-        Types ITypesRepository.GetByID(int ID)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
