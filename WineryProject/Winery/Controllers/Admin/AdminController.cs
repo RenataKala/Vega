@@ -160,6 +160,34 @@ namespace Winery.Controllers
 
         }
 
-     
+        public string RenameType( string NewCatName, int id)
+        {
+            if(_typeRepository.GetTypes().Any(t=>t.TypeName == NewCatName))
+            {
+                return "Type name already exists";
+            }
+            Types type = _typeRepository.GetByID(id);
+            type.TypeName = NewCatName;
+            _typeRepository.Update(type);
+
+            return "";         
+
+        }
+
+        public int  CountAll()       
+        {           
+            var count = _wineRepository.GetAll().Count();
+            //return PartialView("_CountAllWines", count);
+            return count;
+        }
+        public int CountWhite()
+        {
+            var count = _wineRepository.GetAll().Where(t => t.TypeID == 48).Count();
+            //return PartialView("_CountAllWines", count);
+            return count;
+        }
+
+
+
     }
 }

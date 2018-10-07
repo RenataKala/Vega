@@ -34,6 +34,7 @@ else
         {
             <tr id="id_@item.TypeID">
                 <td>
+                    <div class="msgDiv"></div>
                     @Html.DisplayFor(modelItem => item.TypeID)
                 </td>
                 <td>
@@ -120,6 +121,50 @@ else
                     return false;
 
             });
+
+            //RENAME CATEGORY
+            var originalCatName;
+
+            $("table#types input.text-box").dblclick(function () {
+                originalCatName = $(this).val();
+                $(this).attr("readonly", false);
+            });
+
+            $("table#types input.text-box").keyup(function (event) {
+                if (event.keyCode === 13) {
+                    $(this).blur();
+                }
+            });
+
+            $("table#types input.text-box").blur(function () {
+                var $this = $(this);
+                var msgDiv = $this.parent().find(".msgDiv");
+                var newCatName = $this.val();
+                var id = $this.parent().parent().attr("id").substring(3);
+                var url = "/admin/RenameType";
+
+
+                $.post(url, { newCatName: newCatName, id: id }, function (data) {
+                 
+                    var response = data.trim();
+                
+                    if (response === "Type name already exists") {
+                        $this.val(originalCatName);
+                        msgDiv.html(`<span class ='alert-danger'>That type already exists!</span>`);
+                    }
+                    else {
+                        msgDiv.html(`<span class ='alert-success'>Type name is updated</span>`);
+                    }
+                }).done(function () {
+                    $this.attr("readonly", true);
+                });
+
+
+            });
+
+
+
+
 
         });
     </script>

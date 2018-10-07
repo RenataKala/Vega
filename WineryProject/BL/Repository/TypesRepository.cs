@@ -31,16 +31,12 @@ namespace BL.Repository
         public void Delete(int typeID)
         {
             Delete(GetByID(typeID));
-        }
-
-     
+        }     
 
         public bool Exists(int typeID)
         {
             return db.Types.Any(t => t.TypeID == typeID);
-        }
-
-      
+        }      
 
         public Types GetByID(int ID)
         {
@@ -53,6 +49,7 @@ namespace BL.Repository
             db.Types.Add(type);
             db.SaveChanges();
         }
+   
 
         
 
@@ -71,9 +68,6 @@ namespace BL.Repository
             throw new NotImplementedException();
         }
 
-        Types ITypesRepository.GetByID(int ID)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
