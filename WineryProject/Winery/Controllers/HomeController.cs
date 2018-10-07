@@ -13,9 +13,15 @@ namespace Winery.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult GrapesAndWine()
         {
-            ViewBag.Message = "Your application description page.";
+           
+
+            return View();
+        }
+        public ActionResult Chardonnay()
+        {
+
 
             return View();
         }

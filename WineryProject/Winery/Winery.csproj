@@ -237,20 +237,26 @@
     <Content Include="Content\img\bottleholding.jpg" />
     <Content Include="Content\img\burinja.jpg" />
     <Content Include="Content\img\buyingwine.jpg" />
-    <Content Include="Content\img\cudak.jpg" />
     <Content Include="Content\img\degustacija.jpg" />
-    <Content Include="Content\img\dvor.jpg" />
     <Content Include="Content\img\girls.jpg" />
     <Content Include="Content\img\grapeeeeees.jpg" />
-    <Content Include="Content\img\grapes %281%29.jpg" />
-    <Content Include="Content\img\Grapes-and-Grains-Trail.jpg" />
     <Content Include="Content\img\grozje.jpg" />
-    <Content Include="Content\img\grozje1.jpg" />
+    <Content Include="Content\img\img grapes\Cabernet-Sauvignon-Wine-Bottle-WineFolly-3eb4138.jpg" />
+    <Content Include="Content\img\img grapes\chardonnay-flavours.png" />
+    <Content Include="Content\img\img grapes\Chardonnay-Wine-Bottle-WineFolly-3eb4138.png" />
+    <Content Include="Content\img\img grapes\handling.png" />
+    <Content Include="Content\img\img grapes\Malbec-Wine-Bottle-WineFolly-3eb4138.jpg" />
+    <Content Include="Content\img\img grapes\merlot-flavour.png" />
+    <Content Include="Content\img\img grapes\merlot-handling.png" />
+    <Content Include="Content\img\img grapes\Merlot-Wine-Bottle-WineFolly-3eb4138.jpg" />
+    <Content Include="Content\img\img grapes\pinot-flavours.png" />
+    <Content Include="Content\img\img grapes\pinot-handling.png" />
+    <Content Include="Content\img\img grapes\Pinot-Noir-Wine-Bottle-WineFolly-3eb4138.jpg" />
+    <Content Include="Content\img\img grapes\Riesling-Wine-Bottle-WineFolly-3eb4138.jpg" />
+    <Content Include="Content\img\img grapes\Sauvignon-Blanc-Wine-Bottle-WineFolly-3eb4138 %281%29.jpg" />
+    <Content Include="Content\img\img grapes\Syrah-Wine-Bottle-WineFolly-3eb4138.jpg" />
     <Content Include="Content\img\index.jpg" />
-    <Content Include="Content\img\red-grapes.jpg" />
     <Content Include="Content\img\serving wine.jpg" />
-    <Content Include="Content\img\venue.jpg" />
-    <Content Include="Content\img\vinoicasi.jpg" />
     <Content Include="Content\img\wineandfood.jpg" />
     <Content Include="Content\img\winecard1.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
@@ -391,6 +397,7 @@
     <Content Include="Views\AdminWine\Create.cshtml" />
     <Content Include="Views\AdminRegionCountry\Region.cshtml" />
     <Content Include="Views\AdminRegionCountry\Country.cshtml" />
+    <Content Include="Views\Home\GrapesAndWine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
