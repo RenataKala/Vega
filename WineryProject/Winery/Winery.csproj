@@ -386,18 +386,17 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Admin\_ListAllWines.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\GetAllTypes.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\Admin\GetAllSubTypes.cshtml" />
     <Content Include="Views\AdminWine\Index.cshtml" />
     <Content Include="Views\Admin\BottleSize.cshtml" />
-    <Content Include="Views\AdminWine\UploadWineImage.cshtml" />
     <Content Include="Views\AdminWine\Create.cshtml" />
     <Content Include="Views\AdminRegionCountry\Region.cshtml" />
     <Content Include="Views\AdminRegionCountry\Country.cshtml" />
     <Content Include="Views\Home\GrapesAndWine.cshtml" />
+    <Content Include="Views\Admin\ListAllWines.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,13 +10,17 @@
      
    
     <div class="row">
+        <div class=" pt-5 col-sm-4">
+            <img class="img-circle" src="~/Content/img/6.jpg" alt="red wine" width="140" height="140">
+            <h2 class="">All - @{Html.RenderAction("CountAll", "Admin"); }</h2>
 
-      
+            <a class="btn btn-lg btn-info" href="@Url.Action("ListAllWines","Admin")">List All wines</a>
+        </div>
 
         <div class="col-sm-4">
             <img class="img-circle" src="~/Content/img/1.jpg" alt="red wine" width="140" height="140">
             <h2 class="">Red --> </h2>
-            
+
             <a class="btn btn-lg btn-info" href="#">List red wines</a>
         </div>
         <div class="col-sm-4">
@@ -45,12 +49,7 @@
             <a class="btn btn-lg btn-info" href="#">List dessert wines</a>
         </div>
 
-        <div class=" pt-5 col-sm-4">
-            <img class="img-circle" src="~/Content/img/6.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">All - @{Html.RenderAction("CountAll", "Admin"); }</h2>
 
-            <a class="btn btn-lg btn-info" href="@Url.Action("ListAllWines","Admin")">List All wines</a>
-        </div>
 
 
 

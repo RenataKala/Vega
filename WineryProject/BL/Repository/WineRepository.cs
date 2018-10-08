@@ -44,7 +44,7 @@ namespace BL.Repository
 
         public Wine GetByID(int ID)
         {
-            throw new NotImplementedException();
+            return db.Wines.SingleOrDefault(t=>t.WineID == ID);
         }
 
         public void Insert(Wine wine)

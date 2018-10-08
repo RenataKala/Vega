@@ -61,11 +61,11 @@ namespace Winery.Controllers.Admin
         "image/png"
    };
 
-    if (model.File == null || model.File.ContentLength == 0)
+                if (model.File == null || model.File.ContentLength == 0)
             {
                 ModelState.AddModelError("File", "This field is required");
             }
-            else if (!validImageTypes.Contains(model.File.ContentType))
+                else if (!validImageTypes.Contains(model.File.ContentType))
             {
                 ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
             }
@@ -105,5 +105,6 @@ namespace Winery.Controllers.Admin
             return View(model);
         }  
 
+       
     }
 }

@@ -46,11 +46,13 @@ namespace Winery.Controllers
                 ImagePath = t.ImagePath,
                 BottleSizeID = t.BottleSizeID,
                 Types = t.Types.TypeName,
-                SubTypes = t.SubTypes.SubTypeName
+                SubTypes = t.SubTypes.SubTypeName,
+                RegionName = t.Regions.RegionName,
+                CountryName = t.Countrys.CountryName
                
 
             }).ToList();
-            return PartialView("_ListAllWines",wines);
+            return View(wines);
         }
 
         public ActionResult GetAllTypes()
@@ -185,6 +187,11 @@ namespace Winery.Controllers
             var count = _wineRepository.GetAll().Where(t => t.TypeID == 48).Count();
             //return PartialView("_CountAllWines", count);
             return count;
+        }
+        public ActionResult DeleteWine(int id)
+        {
+            _wineRepository.Delete(id);
+            return RedirectToAction("ListAllWines");
         }
 
 
