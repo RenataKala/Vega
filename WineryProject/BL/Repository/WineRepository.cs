@@ -42,6 +42,11 @@ namespace BL.Repository
             return db.Wines.ToList();
         }
 
+        public List<Wine> GetByType(string type)
+        {
+            return db.Wines.Where(t => t.Types.TypeName == type).ToList();
+        }
+
         public Wine GetByID(int ID)
         {
             return db.Wines.SingleOrDefault(t=>t.WineID == ID);
