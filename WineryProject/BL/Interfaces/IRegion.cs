@@ -9,7 +9,7 @@ namespace BL.Interfaces
 {
     public interface IRegion
     {
-        IQueryable<Region> GetAll();
+        List<Region> GetAll();
         Region GetByID(int ID);
         void Insert(Region region);
         void Update(Region region);

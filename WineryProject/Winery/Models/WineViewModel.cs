@@ -1,8 +1,11 @@
 ﻿using DL.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Winery.Models
 {
@@ -24,8 +27,7 @@ namespace Winery.Models
             Name = wine.Name;
             Description = wine.Description;
             ImagePath = wine.ImagePath;
-
-            
+                       
         }
 
 
@@ -39,6 +41,7 @@ namespace Winery.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImagePath { get; set; }
+        [DisplayName("Upload image")]
         public HttpPostedFileBase File { get; set; }
 
 
@@ -46,6 +49,12 @@ namespace Winery.Models
         public string RegionName { get; set; }
         public string CountryName { get; set; }
         public string SubTypes { get; set; }
-        
+
+        public List<Types> TypesList { get; set; }
+        public List<Region> RegionList { get; set; }
+        public List<Country> CountryList { get; set; }
+        public List<SubType> SubTypesList { get; set; }
+        public List<BottleSize> BottleSizeList { get; set; }
+
     }
 }

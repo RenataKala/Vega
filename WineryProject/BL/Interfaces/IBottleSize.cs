@@ -9,7 +9,7 @@ namespace BL.Interfaces
 {
     public interface IBottleSize
     {
-        IQueryable<BottleSize> GetAll();
+        List<BottleSize> GetAll();
         BottleSize GetByID(int ID);
         void Insert(BottleSize bottlesize);
         void Update(BottleSize bottlesize);

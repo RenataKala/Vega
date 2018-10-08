@@ -42,9 +42,9 @@ namespace BL.Repository
             throw new NotImplementedException();
         }
 
-        public IQueryable<Region> GetAll()
+        public List<Region> GetAll()
         {
-            return db.Regions;
+            return db.Regions.ToList();
         }
 
         public Region GetByID(int ID)

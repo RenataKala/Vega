@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace BL.Repository
 {
-    public class BottleSizeRerpository : IBottleSize
+    public class BottleSizeRepository : IBottleSize
     {
 
         private WineryDB db;
 
-        public BottleSizeRerpository()
+        public BottleSizeRepository()
         {
             db = new WineryDB();
         }
@@ -39,9 +39,9 @@ namespace BL.Repository
 
      
 
-        public IQueryable<BottleSize> GetAll()
+        public List<BottleSize> GetAll()
         {
-            return db.BottleSizes;
+            return db.BottleSizes.ToList();
         }
 
         public BottleSize GetByID(int ID)

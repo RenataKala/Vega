@@ -21,6 +21,14 @@ namespace BL.Repository
         {
             return db.Types.ToList();
         }
+        public List<int> GetTypesByID()
+        {
+            return db.Types.Select(t=>t.TypeID).ToList();
+        }
+        public List<string> GetTypesNames()
+        {
+            return db.Types.Select(t => t.TypeName).ToList();
+        }
         public void Delete(Types type)
         {
             if (type == null) return;

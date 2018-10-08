@@ -36,9 +36,9 @@ namespace BL.Repository
             return db.SubTypes.Any(t => t.SubTypeID == subtypeID);
         }
 
-        public IQueryable<SubType> GetAll()
+        public List<SubType> GetAll()
         {
-            return db.SubTypes;
+            return db.SubTypes.ToList();
         }
 
         public SubType GetByID(int ID)

@@ -22,7 +22,7 @@ namespace Winery.Controllers
             _wineRepository = new WineRepository();
             _subTypeRepository = new SubTypeRepository();
             _typeRepository = new TypesRepository();
-            _bottleSizeRepository = new BottleSizeRerpository();
+            _bottleSizeRepository = new BottleSizeRepository();
         }
         // GET: Admin
         public ActionResult Index()

@@ -9,7 +9,7 @@ namespace BL.Interfaces
 {
     public interface ISubTypeRepository
     {
-        IQueryable<SubType> GetAll();
+        List<SubType> GetAll();
         SubType GetByID(int ID);
         void Insert(SubType subtype);
         void Update(SubType subtype);
