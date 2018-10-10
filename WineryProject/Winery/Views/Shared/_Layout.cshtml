@@ -56,18 +56,17 @@
 </body>
 </html>
 
-@*<script>
-        var wine;
+<script>
+      
         $(function GetByType() {
-            wine = new ("GetAllSongs/Song", {
-                formats: ['ogg', 'mp3']
-            }).setVolume(100).play();
+            var wine = $("#type").val(); {
+                $.ajax({
 
-            $('#pause').click(function () {
-                sound.pause();
-            });
-            $('#play').click(function () {
-                sound.play();
-            });
-        });
-</script>*@
+                    url: '@Url.Action("GetByType","Wine")' + '?type' + wine,
+                    type: "GET",
+                    success: function (response) {
+                        $("#test").html(response);
+                    }
+                });
+        
+</script>
