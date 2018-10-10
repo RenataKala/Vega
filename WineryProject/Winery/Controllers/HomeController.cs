@@ -19,7 +19,7 @@ namespace Winery.Controllers
 
             return View();
         }
-        public ActionResult Chardonnay()
+        public ActionResult WineSimplified()
         {
 
 
