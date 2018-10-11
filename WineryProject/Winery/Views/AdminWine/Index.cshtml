@@ -10,41 +10,41 @@
      
    
     <div class="row">
-        <div class=" pt-5 col-sm-4">
-            <img class="img-circle" src="~/Content/img/6.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">All - @{Html.RenderAction("CountAll", "Admin"); }</h2>
-
+        <div class=" col-sm-4">
+            <img class="img-circle img img-fluid" src="~/Content/img/all.jpg" alt="red wine" height="140" width="140">
+            <h2 class="">All --> @{Html.RenderAction("CountAll", "Admin"); }</h2>
             <a class="btn btn-lg btn-info" href="@Url.Action("ListAllWines","Admin")">List All wines</a>
         </div>
 
         <div class="col-sm-4">
-            <img class="img-circle" src="~/Content/img/1.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">Red --> </h2>
-
+            <img class="img-circle img img-fluid" src="~/Content/img/red.jpg" alt="red wine" height="140" width="140">
+            <h2 class="">Red -->@{Html.RenderAction("CountWine", "Admin", new { type = "Red" }); } </h2>
             <a class="btn btn-lg btn-info" href="#">List red wines</a>
         </div>
-        <div class="col-sm-4">
-            <img class="img-circle" src="~/Content/img/2.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">White -->@{Html.RenderAction("CountWhite", "Admin"); }</h2>
 
-            <a class="btn btn-lg btn-info" href="#">List white wines</a>
-        </div>
         <div class="col-sm-4">
-            <img class="img-circle" src="~/Content/img/4.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">Rose - <span>5</span></h2>
-
+            <img class="img-circle img img-fluid" src="~/Content/img/rose.jpg" alt="red wine" height="140" width="140">
+            <h2 class="">Rose --> @{Html.RenderAction("CountWine", "Admin",new {type = "Rose" }); }</h2>
             <a class="btn btn-lg btn-info" href="#">List rose wines</a>
         </div>
 
-        <div class="pt-5 col-sm-4">
-            <img class="img-circle" src="~/Content/img/3.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">Sparkling - <span>5</span></h2>
+        <div class="col-sm-4">
+            <img class="img-circle img img-fluid" src="~/Content/img/white.jpg" alt="red wine" height="140" width="140">
+            <h2 class="">White -->@{Html.RenderAction("CountWine", "Admin", new { type = "White" }); }</h2>
+
+            <a class="btn btn-lg btn-info" href="#">List white wines</a>
+        </div>
+
+
+        <div class=" col-sm-4">
+            <img class="img-circle img img-fluid" src="~/Content/img/3.jpg" alt="red wine" height="140" width="140">
+            <h2 class="">Sparkling --> @{Html.RenderAction("CountWine", "Admin", new { type = "Sparkling" }); }</h2>
 
             <a class="btn btn-lg btn-info" href="#">List sparkling wines</a>
         </div>
-        <div class="pt-5 col-sm-4">
-            <img class="img-circle" src="~/Content/img/5.jpg" alt="red wine" width="140" height="140">
-            <h2 class="">Dessert - <span>5</span></h2>
+        <div class=" col-sm-4">
+            <img class="img-circle img img-fluid" src="~/Content/img/5.jpg" alt="red wine" height="140" width="140">
+            <h2 class="">Dessert --> @{Html.RenderAction("CountWine", "Admin", new { type = "Dessert" }); }</h2>
 
             <a class="btn btn-lg btn-info" href="#">List dessert wines</a>
         </div>

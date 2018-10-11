@@ -188,6 +188,12 @@ namespace Winery.Controllers
             
             return count;
         }
+
+        public int CountWine(string type)
+        {
+            var count = _wineRepository.GetByType(type).Count();
+            return count;
+        }
         public ActionResult DeleteWine(int id)
         {
             _wineRepository.Delete(id);

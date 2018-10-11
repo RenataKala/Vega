@@ -235,6 +235,7 @@
     <Content Include="Content\dashboard.css" />
     <Content Include="Content\img\6.jpg" />
     <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\all.jpg" />
     <Content Include="Content\img\bottleholding.jpg" />
     <Content Include="Content\img\burinja.jpg" />
     <Content Include="Content\img\buyingwine.jpg" />
@@ -257,8 +258,12 @@
     <Content Include="Content\img\img grapes\Sauvignon-Blanc-Wine-Bottle-WineFolly-3eb4138 %281%29.jpg" />
     <Content Include="Content\img\img grapes\Syrah-Wine-Bottle-WineFolly-3eb4138.jpg" />
     <Content Include="Content\img\index.jpg" />
+    <Content Include="Content\img\red.jpg" />
+    <Content Include="Content\img\rose.jpg" />
     <Content Include="Content\img\serving wine.jpg" />
     <Content Include="Content\img\img grapes\wine basics.png" />
+    <Content Include="Content\img\sparkling.jpg" />
+    <Content Include="Content\img\white.jpg" />
     <Content Include="Content\img\wineandfood.jpg" />
     <Content Include="Content\img\winecard1.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
