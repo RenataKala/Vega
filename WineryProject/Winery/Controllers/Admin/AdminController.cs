@@ -179,13 +179,13 @@ namespace Winery.Controllers
         public int  CountAll()       
         {           
             var count = _wineRepository.GetAll().Count();
-            //return PartialView("_CountAllWines", count);
+            
             return count;
         }
         public int CountWhite()
         {
             var count = _wineRepository.GetAll().Where(t => t.TypeID == 48).Count();
-            //return PartialView("_CountAllWines", count);
+            
             return count;
         }
         public ActionResult DeleteWine(int id)

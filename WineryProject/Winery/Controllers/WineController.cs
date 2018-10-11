@@ -29,7 +29,7 @@ namespace Winery.Controllers
         // GET: Wine
         public ActionResult GetByType(string type)
         {
-            var wines = _wineRepository.GetByType().Select(t => new WineViewModel
+            var wines = _wineRepository.GetByType(type).Select(t => new WineViewModel
             {
                
                 CountryID = t.CountryID,
