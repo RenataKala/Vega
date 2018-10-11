@@ -24,7 +24,7 @@
                             Wine
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Red</a>
+                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")">Red</a>
                             <a class="dropdown-item" href="#">White</a>
                             <a class="dropdown-item" href="#">Rose</a>
                             <a class="dropdown-item" href="#">Sparkling</a>
@@ -55,3 +55,18 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+<script>
+      
+        $(function GetByType() {
+            var wine = $("#type").val(); {
+                $.ajax({
+
+                    url: '@Url.Action("GetByType","Wine")' + '?type' + wine,
+                    type: "GET",
+                    success: function (response) {
+                        $("#test").html(response);
+                    }
+                });
+        
+</script>

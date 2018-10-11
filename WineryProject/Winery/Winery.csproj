@@ -258,6 +258,7 @@
     <Content Include="Content\img\img grapes\Syrah-Wine-Bottle-WineFolly-3eb4138.jpg" />
     <Content Include="Content\img\index.jpg" />
     <Content Include="Content\img\serving wine.jpg" />
+    <Content Include="Content\img\img grapes\wine basics.png" />
     <Content Include="Content\img\wineandfood.jpg" />
     <Content Include="Content\img\winecard1.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
@@ -398,6 +399,8 @@
     <Content Include="Views\AdminRegionCountry\Country.cshtml" />
     <Content Include="Views\Home\GrapesAndWine.cshtml" />
     <Content Include="Views\Admin\ListAllWines.cshtml" />
+    <Content Include="Views\Home\WineSimplified.cshtml" />
+    <Content Include="Views\Home\WineFacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

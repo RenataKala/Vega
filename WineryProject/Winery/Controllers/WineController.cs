@@ -26,23 +26,23 @@ namespace Winery.Controllers
             _typesRepository = new TypesRepository();
           
         }
-        // GET: Wine
+       // GET: Wine
         public ActionResult GetByType(string type)
         {
             var wines = _wineRepository.GetByType(type).Select(t => new WineViewModel
             {
-               
+
                 CountryID = t.CountryID,
                 RegionID = t.RegionID,
                 TypeID = t.TypeID,
-             
+
                 Vintage = t.Vintage,
                 Name = t.Name,
                 Description = t.Description,
                 ImagePath = t.ImagePath,
                 BottleSizeID = t.BottleSizeID,
                 Types = t.Types.TypeName,
-              
+
                 RegionName = t.Regions.RegionName,
                 CountryName = t.Countrys.CountryName
 
@@ -51,7 +51,7 @@ namespace Winery.Controllers
             return View(wines);
         }
 
-        // GET: Wine/Details/5
+        //GET: Wine/Details/5
         public ActionResult Details(int id)
         {
             return View();

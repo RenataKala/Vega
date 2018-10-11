@@ -19,16 +19,16 @@ namespace Winery.Controllers
 
             return View();
         }
-        public ActionResult Chardonnay()
+        public ActionResult WineSimplified()
         {
 
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult WineFacts()
         {
-            ViewBag.Message = "Your contact page.";
+            
 
             return View();
         }
