@@ -24,11 +24,11 @@
                             Wine
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")">Red</a>
-                            <a class="dropdown-item" href="#">White</a>
-                            <a class="dropdown-item" href="#">Rose</a>
-                            <a class="dropdown-item" href="#">Sparkling</a>
-                            <a class="dropdown-item" href="#">Dessert</a>
+                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=red">Red</a>
+                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=white">White</a>
+                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=rose">Rose</a>
+                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=sparkling">Sparkling</a>
+                            <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=dessert">Dessert</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -56,17 +56,3 @@
 </body>
 </html>
 
-<script>
-      
-        $(function GetByType() {
-            var wine = $("#type").val(); {
-                $.ajax({
-
-                    url: '@Url.Action("GetByType","Wine")' + '?type' + wine,
-                    type: "GET",
-                    success: function (response) {
-                        $("#test").html(response);
-                    }
-                });
-        
-</script>

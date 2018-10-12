@@ -407,11 +407,11 @@
     <Content Include="Views\Home\WineSimplified.cshtml" />
     <Content Include="Views\Home\WineFacts.cshtml" />
     <Content Include="Views\AdminWine\TypesMenuPartial.cshtml" />
+    <Content Include="Views\Wine\GetByType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\uploads\" />
-    <Folder Include="Views\Wine\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
