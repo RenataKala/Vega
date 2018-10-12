@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Winery.Models.TypesViewModel>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4 py-5 border border-primary rounded-circle bg-light">
+
+                <h3 class="text-muted">
+                    @item.TypeName
+                </h3>
+                <h2>
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                    @{Html.RenderAction("CountWine", "Admin", new { type = item.TypeName }); }
+                </h2>
+                
+                <a class="btn  btn-info" href="#">List @item.TypeName wines</a>
+            </div>
+        }
+    </div>
+</div>
+
+
+

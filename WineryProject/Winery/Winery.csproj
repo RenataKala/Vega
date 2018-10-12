@@ -403,9 +403,10 @@
     <Content Include="Views\AdminRegionCountry\Region.cshtml" />
     <Content Include="Views\AdminRegionCountry\Country.cshtml" />
     <Content Include="Views\Home\GrapesAndWine.cshtml" />
-    <Content Include="Views\Admin\ListAllWines.cshtml" />
+    <Content Include="Views\AdminWine\ListAllWines.cshtml" />
     <Content Include="Views\Home\WineSimplified.cshtml" />
     <Content Include="Views\Home\WineFacts.cshtml" />
+    <Content Include="Views\AdminWine\TypesMenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,81 +6,23 @@
 }
 
 <div class="container" id="boxes">
-    <a class="btn btn-lg btn-warning btn-block py-5 my-5" href="@Url.Action("Create", "AdminWine")">ADD WINE</a>      
-     
-   
-    <div class="row">
-        <div class=" col-sm-4">
-            <img class="img-circle img img-fluid" src="~/Content/img/all.jpg" alt="red wine" height="140" width="140">
-            <h2 class="">All --> @{Html.RenderAction("CountAll", "Admin"); }</h2>
-            <a class="btn btn-lg btn-info" href="@Url.Action("ListAllWines","Admin")">List All wines</a>
-        </div>
+    <a class="btn btn-lg btn-warning btn-block py-5 mt-5" href="@Url.Action("Create", "AdminWine")">ADD WINE</a>
+       
 
-        <div class="col-sm-4">
-            <img class="img-circle img img-fluid" src="~/Content/img/red.jpg" alt="red wine" height="140" width="140">
-            <h2 class="">Red -->@{Html.RenderAction("CountWine", "Admin", new { type = "Red" }); } </h2>
-            <a class="btn btn-lg btn-info" href="#">List red wines</a>
-        </div>
-
-        <div class="col-sm-4">
-            <img class="img-circle img img-fluid" src="~/Content/img/rose.jpg" alt="red wine" height="140" width="140">
-            <h2 class="">Rose --> @{Html.RenderAction("CountWine", "Admin",new {type = "Rose" }); }</h2>
-            <a class="btn btn-lg btn-info" href="#">List rose wines</a>
-        </div>
-
-        <div class="col-sm-4">
-            <img class="img-circle img img-fluid" src="~/Content/img/white.jpg" alt="red wine" height="140" width="140">
-            <h2 class="">White -->@{Html.RenderAction("CountWine", "Admin", new { type = "White" }); }</h2>
-
-            <a class="btn btn-lg btn-info" href="#">List white wines</a>
-        </div>
-
-
-        <div class=" col-sm-4">
-            <img class="img-circle img img-fluid" src="~/Content/img/3.jpg" alt="red wine" height="140" width="140">
-            <h2 class="">Sparkling --> @{Html.RenderAction("CountWine", "Admin", new { type = "Sparkling" }); }</h2>
-
-            <a class="btn btn-lg btn-info" href="#">List sparkling wines</a>
-        </div>
-        <div class=" col-sm-4">
-            <img class="img-circle img img-fluid" src="~/Content/img/5.jpg" alt="red wine" height="140" width="140">
-            <h2 class="">Dessert --> @{Html.RenderAction("CountWine", "Admin", new { type = "Dessert" }); }</h2>
-
-            <a class="btn btn-lg btn-info" href="#">List dessert wines</a>
-        </div>
-
-
-
-
-
+    <div class="row m-5">
+        
+            <h3 class="pr-5">All wines</h3>      
+        
+            <h3 class="pr-5">
+                <i class="fa fa-hand-o-right" aria-hidden="true">
+                </i>@{Html.RenderAction("CountAll", "Admin"); }
+            </h3>     
+      
+            <a class="btn  btn-info" href="@Url.Action("ListAllWines","AdminWine")">List all wines</a>        
     </div>
-    </div>
+           
+    
+@Html.Action("TypesMenuPartial","AdminWine")
+</div>
 
-<script>
-
-     function addWine() {
-        var Name = $("#name").val();
-        var TypeID = $("#type").val();
-        var SubtypeID = $("#subtype").val();
-        var Description = $("#desc").val();
-        var Vintage = $("#vintage").val();
-        var BottleSizeID = $("#bs").val();
-        var RegionID = $("#region").val();
-        var CountryID = $("#country").val();
-        var ImagePath = $("#file").val();
-         var data = {
-             Name: Name, TypeID: TypeID, SubTypeID: SubtypeID, Description: Description, Vintage: Vintage, BottleSizeID : BottleSizeID,
-             RegionID: RegionID, CountryID: CountryID,ImagePath:ImagePath
-         };
-          $.ajax({
-            url: '@Url.Action("AddWine","AdminWine")',
-                type: "Post",
-                data:data,
-                dataType: "text/html",
-            success: function (response) {
-
-            }
-        });
-    }
-</script>
 

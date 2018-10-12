@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Winery.Models.WineViewModel>
+
+@{
+    ViewBag.Title = "ListAllWines";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<hr>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div id="DIV_@item.WineID" class="col-md-3 border-bottom">
+            <img src="@Url.Content(item.ImagePath)" class="img-fluid" />
+            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Vintage)
+          
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "DeleteWine", new {  id=item.WineID })
+
+        </div>                    
+        
+        }
+    </div>
+
+

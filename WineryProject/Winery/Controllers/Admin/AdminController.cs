@@ -31,30 +31,6 @@ namespace Winery.Controllers
             return View();
         }
 
-        public ActionResult ListAllWines()
-        {
-            var wines = _wineRepository.GetAll().Select(t => new WineViewModel
-            {
-                WineID = t.WineID,
-                CountryID = t.CountryID,
-                RegionID = t.RegionID,
-                TypeID = t.TypeID,
-                SubTypeID = t.SubTypeID,
-                Vintage = t.Vintage,
-                Name = t.Name,
-                Description = t.Description,
-                ImagePath = t.ImagePath,
-                BottleSizeID = t.BottleSizeID,
-                Types = t.Types.TypeName,
-                SubTypes = t.SubTypes.SubTypeName,
-                RegionName = t.Regions.RegionName,
-                CountryName = t.Countrys.CountryName
-               
-
-            }).ToList();
-            return View(wines);
-        }
-
         public ActionResult GetAllTypes()
         {
             var types = _typeRepository.GetTypes()
