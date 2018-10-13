@@ -142,6 +142,31 @@ namespace Winery.Controllers.Admin
             return View(wines);
         }
 
+        public ActionResult ListWine(string type)
+        {
+            var wine = _wineRepository.GetByType(type).Select(t => new WineViewModel
+            {
+
+                CountryID = t.CountryID,
+                RegionID = t.RegionID,
+                TypeID = t.TypeID,
+
+                Vintage = t.Vintage,
+                Name = t.Name,
+                Description = t.Description,
+                ImagePath = t.ImagePath,
+                BottleSizeID = t.BottleSizeID,
+                Types = t.Types.TypeName,
+
+                RegionName = t.Regions.RegionName,
+                CountryName = t.Countrys.CountryName,
+                SubTypes = t.SubTypes.SubTypeName
+
+
+            }).ToList();
+            return View(wine);         
+        }
+
 
     }
 }

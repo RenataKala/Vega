@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Winery.Models.WineViewModel>
+
+@{
+    ViewBag.Title = "ListWine";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vintage)
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Region
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTypes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vintage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            <img height="70px" width="70px"class="img img-fluid" src="@Url.Content(item.ImagePath)" alt="wine" /> 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Types)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CountryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTypes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.WineID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.WineID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.WineID })
+        </td>
+    </tr>
+}
+
+</table>
