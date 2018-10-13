@@ -45,22 +45,24 @@ namespace Winery.Controllers.Admin
             return View(countries);
         }
 
-        public ActionResult AddRegion(RegionViewModel model)
+        public string AddRegion(RegionViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (_regionRepository.GetAll().Any(t=>t.RegionName == model.RegionName))
             {
-                return View(model);
+                return "This region is already on the list";
             }
             RegionViewModel region = new RegionViewModel()
             {
+                RegionID = model.RegionID,
                 RegionName = model.RegionName
             };
             _regionRepository.Insert(new Region
             {
+                RegionID = region.RegionID,
                 RegionName = region.RegionName
             });
 
-            return RedirectToAction("Region","AdminRegionCountry");
+            return "";
         }
 
         public ActionResult DeleteRegion(int id)

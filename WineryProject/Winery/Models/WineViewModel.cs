@@ -43,6 +43,8 @@ namespace Winery.Models
         public string ImagePath { get; set; }
         [DisplayName("Upload image")]
         public HttpPostedFileBase File { get; set; }
+  
+        public decimal Price { get; set; }
 
 
         public string Types { get; set; }

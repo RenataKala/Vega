@@ -85,6 +85,7 @@ namespace Winery.Controllers.Admin
                     Vintage = model.Vintage,
                     Name = model.Name,
                     Description = model.Description,
+                    Price = model.Price
                     
                 };
         
@@ -146,7 +147,6 @@ namespace Winery.Controllers.Admin
         {
             var wine = _wineRepository.GetByType(type).Select(t => new WineViewModel
             {
-
                 CountryID = t.CountryID,
                 RegionID = t.RegionID,
                 TypeID = t.TypeID,
@@ -162,9 +162,14 @@ namespace Winery.Controllers.Admin
                 CountryName = t.Countrys.CountryName,
                 SubTypes = t.SubTypes.SubTypeName
 
-
             }).ToList();
             return View(wine);         
+        }
+
+        public ActionResult DeleteWine(int id)
+        {
+            _wineRepository.Delete(id);
+            return RedirectToAction("ListAllWines");
         }
 
 
