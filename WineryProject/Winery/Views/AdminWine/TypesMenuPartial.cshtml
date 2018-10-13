@@ -15,7 +15,7 @@
                     @{Html.RenderAction("CountWine", "Admin", new { type = item.TypeName }); }
                 </h2>
                 
-                <a class="btn  btn-info" href="#">List @item.TypeName wines</a>
+                <a class="btn  btn-info" href="@Url.Action("ListWine", "AdminWine")?type=@item.TypeName">List @item.TypeName wines</a>
             </div>
         }
     </div>
