@@ -1,0 +1,45 @@
+﻿@model Winery.Models.WineViewModel
+
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row py-5">
+
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.ImagePath)" alt="wine " class="img img-fluid img-thumbnail" />
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item">Name :  <strong>@Html.DisplayFor(model => model.Name)</strong> </li>
+                    <li class="list-group-item">Region:  <strong> @Html.DisplayFor(model => model.RegionName)</strong></li>
+                    <li class="list-group-item">Country:  <strong> @Html.DisplayFor(model => model.CountryName)</strong></li>
+                    <li class="list-group-item">Vintage: <strong>@Html.DisplayFor(model => model.Vintage)</strong>  </li>
+                    <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => model.Types )</strong> </li>
+                    <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => model.SubTypes)</strong>  </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item">Description: <strong> @Html.DisplayFor(model => model.Description)</strong> </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.WineID }) |
+
+    </p>
+</div>
+

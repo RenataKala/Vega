@@ -11,7 +11,7 @@ using Winery.Models;
 
 namespace Winery.Controllers.Admin
 {
-    
+    [Authorize(Roles = "Admin")]
     public class AdminRegionCountryController : Controller
     {
         private WineryDB db;

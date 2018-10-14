@@ -12,6 +12,7 @@ using Winery.Models;
 
 namespace Winery.Controllers.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class AdminWineController : Controller
     {
         private WineryDB db;
@@ -119,6 +120,7 @@ namespace Winery.Controllers.Admin
             return PartialView(list);
         }
 
+        [ActionName("wines")]
         public ActionResult ListAllWines()
         {
             var wines = _wineRepository.GetAll().Select(t => new WineViewModel
@@ -170,6 +172,36 @@ namespace Winery.Controllers.Admin
         {
             _wineRepository.Delete(id);
             return RedirectToAction("ListAllWines");
+        }
+
+        [ActionName("details")]
+        public ActionResult Details(int id)
+        {
+            var wine = _wineRepository.GetByID(id);
+            if (wine == null)
+            {
+                return Content("This wine does not exist");
+            }
+            WineViewModel model = new WineViewModel()
+            {
+                CountryID = wine.CountryID,
+                RegionID = wine.RegionID,
+                TypeID = wine.TypeID,
+
+                Vintage = wine.Vintage,
+                Name = wine.Name,
+                Description = wine.Description,
+                ImagePath = wine.ImagePath,
+                BottleSizeID = wine.BottleSizeID,
+                Types = wine.Types.TypeName,
+
+                RegionName = wine.Regions.RegionName,
+                CountryName = wine.Countrys.CountryName,
+                SubTypes = wine.SubTypes.SubTypeName
+
+            };          
+
+            return View(model);
         }
 
 

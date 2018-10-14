@@ -27,7 +27,7 @@ namespace Winery.Models
             Name = wine.Name;
             Description = wine.Description;
             ImagePath = wine.ImagePath;
-                       
+            Price = wine.Price;                       
         }
 
 
