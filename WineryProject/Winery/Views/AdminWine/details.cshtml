@@ -1,8 +1,10 @@
 ﻿@model Winery.Models.WineViewModel
 
 @{
-    ViewBag.Title = "details";
-    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    //ViewBag.Title = "details";
+    //Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+   // var wineId = Model.WineID ;
+
 }
 
 <div class="container">
@@ -38,8 +40,15 @@
 
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.WineID }) |
+        <a href="@Url.Action("EditWine","AdminWine")?id=@Model.WineID">EDIT WINE</a> 
+      
 
     </p>
 </div>
+
+<script>
+
+
+</script>
+
 

@@ -47,7 +47,11 @@ namespace Winery.Controllers.Admin
 
         public string AddRegion(RegionViewModel model)
         {
-            if (_regionRepository.GetAll().Any(t=>t.RegionName == model.RegionName))
+            if (ModelState.IsValid)
+            {
+                return "Must enter a region name";
+            }
+                if (_regionRepository.GetAll().Any(t=>t.RegionName == model.RegionName))
             {
                 return "This region is already on the list";
             }

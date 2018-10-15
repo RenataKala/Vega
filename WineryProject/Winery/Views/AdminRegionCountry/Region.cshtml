@@ -50,8 +50,11 @@
              success: function (response) {
                     
                       var data = response.trim();
-
-                      if (data === "This region is already on the list") {
+                 if (data === "Must enter a region name") {
+                     alertdiv.html(`<div class="alert alert-danger display-4 mt-4" role="alert">
+                         Must enter a region name </div >`);
+                 }
+                  else  if (data === "This region is already on the list") {
                           alertdiv.html(`<div class="alert alert-danger display-4 mt-4" role="alert">
                           This country is already on the list </div >`);
                       }

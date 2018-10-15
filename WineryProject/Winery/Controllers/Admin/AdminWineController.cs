@@ -187,6 +187,7 @@ namespace Winery.Controllers.Admin
                 CountryID = wine.CountryID,
                 RegionID = wine.RegionID,
                 TypeID = wine.TypeID,
+                WineID= wine.WineID,
 
                 Vintage = wine.Vintage,
                 Name = wine.Name,
@@ -194,7 +195,8 @@ namespace Winery.Controllers.Admin
                 ImagePath = wine.ImagePath,
                 BottleSizeID = wine.BottleSizeID,
                 Types = wine.Types.TypeName,
-
+                Price= wine.Price,
+              
                 RegionName = wine.Regions.RegionName,
                 CountryName = wine.Countrys.CountryName,
                 SubTypes = wine.SubTypes.SubTypeName
@@ -202,6 +204,48 @@ namespace Winery.Controllers.Admin
             };          
 
             return View(model);
+        }
+
+        public ActionResult EditWine(int id)
+        {
+            WineViewModel model;
+            var wine = _wineRepository.GetByID(id);
+            if (wine == null)
+            {
+                return Json(new { success = false, message = "No item found" });
+            }
+            model = new WineViewModel(wine);
+            model.TypesList = _typesRepository.GetTypes();
+            model.SubTypesList = _subTypeRepository.GetAll();
+            model.BottleSizeList = _bottleSizeRepository.GetAll();
+            model.RegionList = _regionRepository.GetAll();
+            model.CountryList = db.Countries.ToList();
+
+            return View(model);
+        }
+
+        public ActionResult UpdateWine(WineViewModel model)
+        {
+            Wine wine = _wineRepository.GetByID(model.WineID);
+            if (wine == null)
+            {
+                return Json(new { success = false, message = "No item found" });
+            }
+            wine.Name = model.Name;
+            wine.RegionID = model.RegionID;
+            wine.CountryID = model.CountryID;
+            wine.BottleSizeID = model.BottleSizeID;
+            wine.Description = model.Description;
+            wine.ImagePath = model.ImagePath;
+            wine.Vintage = model.Vintage;
+            wine.Price = model.Price;
+            wine.WineID = model.WineID;
+
+
+            _wineRepository.Update(wine);
+            return RedirectToAction("details",wine.WineID);
+         //  return Json(new { success = true, message = "Success" }, JsonRequestBehavior.AllowGet);
+
         }
 
 
