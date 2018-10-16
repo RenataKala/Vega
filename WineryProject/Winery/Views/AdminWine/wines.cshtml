@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Winery.Models.WineViewModel>
 
 @{
-    ViewBag.Title = "ListAllWines";
+    ViewBag.Title = "wines";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
@@ -12,11 +12,12 @@
         {
         <div id="DIV_@item.WineID" class="col-md-3 border-bottom">
             <img src="@Url.Content(item.ImagePath)" class="img-fluid" />
-            @Html.DisplayFor(modelItem => item.Name)
-            @Html.DisplayFor(modelItem => item.Vintage)
+            @Html.DisplayFor(modelItem => item.Name)<br />
+           
           
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "DeleteWine", new {  id=item.WineID })
+            @Html.ActionLink("Details", "details", new { id = item.WineID }) |
+            @Html.ActionLink("Delete", "DeleteWine", new {  id=item.WineID },
+        new { onclick = "return confirm('Are you sure you wish to delete?');" })
 
         </div>                    
         
