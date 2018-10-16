@@ -35,10 +35,10 @@
                         <a class="nav-link" href="#">Food</a>
                     </li>
                 </ul>
-                @*<form class="form-inline">*@
-                <input class="form-control mr-sm-2" id="searchName" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="getByName()">Search</button>
-                @*</form>*@
+                <form class="form-inline">
+                    <input class="  form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
             @Html.Partial("_LoginPartial")
         </div>
@@ -53,27 +53,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
-
 </body>
-
-
-
-
 </html>
-<script>
-    function getByName() {
-     var wineInput = $("#searchName").val();
-    console.log(wineInput);
 
-            $.ajax({
-        url: '@Url.Action("GetByName", "Wine")'+'?name=' + wineInput,
-    type: "GET",
-            success: function (response) {
-
-        console.log(response);
-    }
-    });
-}
-
-</script>
