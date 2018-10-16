@@ -21,8 +21,7 @@ namespace Winery.Controllers
         public WineController()
         {
             db = new WineryDB();
-            _wineRepository = new WineRepository();
-           
+            _wineRepository = new WineRepository();           
             _typesRepository = new TypesRepository();
           
         }
@@ -75,72 +74,47 @@ namespace Winery.Controllers
             }
             return View(wines);
         }
-
-        //GET: Wine/Details/5
-        public ActionResult Details(int id)
+        
+        [ActionName("all-wines")]
+        public ActionResult AllWines()
         {
-            return View();
+            var list = _typesRepository.GetTypes()
+                .Select(t => new TypesViewModel
+                {
+                    TypeID = t.TypeID,
+                    TypeName = t.TypeName
+
+                });
+            return View(list);
         }
-
-
-        // POST: Wine/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        
+        public ActionResult GetByTypePartial(string type)
         {
-            try
+            var wines = _wineRepository.GetByType(type).Select(t => new WineViewModel
             {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                CountryID = t.CountryID,
+                RegionID = t.RegionID,
+                TypeID = t.TypeID,
+
+                Vintage = t.Vintage,
+                Name = t.Name,
+                Description = t.Description,
+                ImagePath = t.ImagePath,
+                BottleSizeID = t.BottleSizeID,
+                Types = t.Types.TypeName,
+                Price= t.Price,
+
+                RegionName = t.Regions.RegionName,
+                CountryName = t.Countrys.CountryName
+
+
+            }).ToList();
+            return PartialView(wines);
+
         }
+        
 
-        // GET: Wine/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Wine/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Wine/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Wine/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+     
     }
 }

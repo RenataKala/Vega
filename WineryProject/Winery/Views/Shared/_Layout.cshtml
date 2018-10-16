@@ -21,7 +21,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-glass" aria-hidden="true"></i>
-                            Wine
+                            Choose
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=red">Red</a>
@@ -34,6 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Food</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("all-wines","Wine")">Wines</a>
+                        </li>
                 </ul>
                 @*<form class="form-inline">*@
                     <input class="  form-control mr-sm-2" id="searchName" type="search" placeholder="Search" aria-label="Search">

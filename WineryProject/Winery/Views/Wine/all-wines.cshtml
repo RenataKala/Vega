@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Winery.Models.TypesViewModel>
+
+@{
+    ViewBag.Title = "allwines";
+}
+
+@foreach (var item in Model)
+{
+    <div class="py-5" style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+        <a onclick="getwines('@item.TypeName')" style="font-size: 40px; background-color: #F3F5F6; padding: 0 10px;">
+            @item.TypeName
+        </a>
+    </div>
+    <div id="result"></div>
+
+}
+
+<script>
+         function getwines(type) {
+               $.ajax({
+                   url: '@Url.Action("GetByTypePartial", "Wine")'+'?type='+type,
+            type: "GET",
+                   success: function (response) {
+                       console.log(response);
+                       $("#result").html(response);
+
+                    }
+            });
+   }
+</script>
+

@@ -210,6 +210,7 @@
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\BottleSizeViewModel.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
+    <Compile Include="Models\CustomVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RegionViewModel.cs" />
@@ -412,6 +413,8 @@
     <Content Include="Views\AdminWine\details.cshtml" />
     <Content Include="Views\AdminWine\EditWine.cshtml" />
     <Content Include="Views\Wine\GetByName.cshtml" />
+    <Content Include="Views\Wine\all-wines.cshtml" />
+    <Content Include="Views\Wine\GetByTypePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
