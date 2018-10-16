@@ -11,7 +11,6 @@ using Winery.Models;
 
 namespace Winery.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly IWineRepository _wineRepository;

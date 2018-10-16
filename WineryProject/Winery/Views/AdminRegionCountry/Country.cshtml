@@ -13,31 +13,33 @@
             <input class="form-control input-form-control-lg" id="country" type="text" placeholder="Enter country name">
             <button class="btn btn-md  mt-2 text-center" onclick="addCountry()">Add</button>
         </div>
-        <div  id="alertdiv"></div>
     </div>
-    <div class="col-md-6">
-
-        <table class="table" id="countryTable">
-            
-
-            @foreach (var item in Model)
-            {
-                <tr id="id_@item.CountryID">
-                    <td>
-                        @Html.EditorFor(modelItem => item.CountryName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                    </td>
-                    <td>
-                        @Html.ActionLink("Delete", "DeleteCountry", new { id = item.CountryID }, new { @class = "delete" })
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>
+    <div class="col-md-6"
+         id="alertdiv"></div>
 
 </div>
 
+<table class="table" id="countryTable">
+    <tr>
+       <th>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </th>
+        <th></th>
+    </tr>
 
+    @foreach (var item in Model)
+    {
+        <tr id="id_@item.CountryID">
+            <td>
+                @Html.EditorFor(modelItem => item.CountryName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteCountry", new { id = item.CountryID }, new { @class = "delete" })
+            </td>
+        </tr>
+    }
+
+</table>
 <script>
        function addCountry() {
         var country = $("#country").val();

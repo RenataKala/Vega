@@ -27,7 +27,7 @@ namespace Winery.Models
             Name = wine.Name;
             Description = wine.Description;
             ImagePath = wine.ImagePath;
-            Price = wine.Price;                       
+                       
         }
 
 
@@ -43,8 +43,6 @@ namespace Winery.Models
         public string ImagePath { get; set; }
         [DisplayName("Upload image")]
         public HttpPostedFileBase File { get; set; }
-  
-        public decimal Price { get; set; }
 
        
         public string Types { get; set; }

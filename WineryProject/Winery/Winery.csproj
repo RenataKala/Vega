@@ -403,18 +403,13 @@
     <Content Include="Views\AdminRegionCountry\Region.cshtml" />
     <Content Include="Views\AdminRegionCountry\Country.cshtml" />
     <Content Include="Views\Home\GrapesAndWine.cshtml" />
-    <Content Include="Views\AdminWine\wines.cshtml" />
+    <Content Include="Views\AdminWine\ListAllWines.cshtml" />
     <Content Include="Views\Home\WineSimplified.cshtml" />
     <Content Include="Views\Home\WineFacts.cshtml" />
     <Content Include="Views\AdminWine\TypesMenuPartial.cshtml" />
     <Content Include="Views\Wine\GetByType.cshtml" />
     <Content Include="Views\AdminWine\ListWine.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Wine\GetByName.cshtml" />
-=======
-    <Content Include="Views\AdminWine\details.cshtml" />
-    <Content Include="Views\AdminWine\EditWine.cshtml" />
->>>>>>> 15a6c89e8b83bc301aaa0e44a085c90f3ce8d4bd
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

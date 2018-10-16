@@ -35,7 +35,7 @@ namespace DL.Maps
 
             HasRequired(t => t.Countrys)
                .WithMany(t => t.Wines)
-               .WillCascadeOnDelete(true);
+               .WillCascadeOnDelete(false);
 
             HasRequired(t => t.BottleSizes)
                .WithMany(t => t.Wines)
@@ -50,7 +50,6 @@ namespace DL.Maps
             Property(w => w.Description).HasMaxLength(4096).IsRequired();
             Property(w => w.Vintage).IsRequired();
             Property(w => w.SubTypeID).IsRequired();
-            Property(w => w.Price).IsOptional();
 
 
         }

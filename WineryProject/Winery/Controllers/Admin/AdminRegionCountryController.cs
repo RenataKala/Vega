@@ -11,7 +11,7 @@ using Winery.Models;
 
 namespace Winery.Controllers.Admin
 {
-    [Authorize(Roles = "Admin")]
+    
     public class AdminRegionCountryController : Controller
     {
         private WineryDB db;
@@ -45,28 +45,22 @@ namespace Winery.Controllers.Admin
             return View(countries);
         }
 
-        public string AddRegion(RegionViewModel model)
+        public ActionResult AddRegion(RegionViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return "Must enter a region name";
-            }
-                if (_regionRepository.GetAll().Any(t=>t.RegionName == model.RegionName))
-            {
-                return "This region is already on the list";
+                return View(model);
             }
             RegionViewModel region = new RegionViewModel()
             {
-                RegionID = model.RegionID,
                 RegionName = model.RegionName
             };
             _regionRepository.Insert(new Region
             {
-                RegionID = region.RegionID,
                 RegionName = region.RegionName
             });
 
-            return "";
+            return RedirectToAction("Region","AdminRegionCountry");
         }
 
         public ActionResult DeleteRegion(int id)

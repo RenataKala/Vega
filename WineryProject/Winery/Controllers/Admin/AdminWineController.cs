@@ -12,7 +12,6 @@ using Winery.Models;
 
 namespace Winery.Controllers.Admin
 {
-    [Authorize(Roles = "Admin")]
     public class AdminWineController : Controller
     {
         private WineryDB db;
@@ -86,12 +85,7 @@ namespace Winery.Controllers.Admin
                     Vintage = model.Vintage,
                     Name = model.Name,
                     Description = model.Description,
-<<<<<<< HEAD
 
-=======
-                    Price = model.Price
-                    
->>>>>>> 15a6c89e8b83bc301aaa0e44a085c90f3ce8d4bd
                 };
 
                 if (model.File != null && model.File.ContentLength > 0)
@@ -124,7 +118,6 @@ namespace Winery.Controllers.Admin
             return PartialView(list);
         }
 
-        [ActionName("wines")]
         public ActionResult ListAllWines()
         {
             var wines = _wineRepository.GetAll().Select(t => new WineViewModel
@@ -153,6 +146,7 @@ namespace Winery.Controllers.Admin
         {
             var wine = _wineRepository.GetByType(type).Select(t => new WineViewModel
             {
+
                 CountryID = t.CountryID,
                 RegionID = t.RegionID,
                 TypeID = t.TypeID,
@@ -168,88 +162,9 @@ namespace Winery.Controllers.Admin
                 CountryName = t.Countrys.CountryName,
                 SubTypes = t.SubTypes.SubTypeName
 
+
             }).ToList();
             return View(wine);
-        }
-
-        public ActionResult DeleteWine(int id)
-        {
-            _wineRepository.Delete(id);
-            return RedirectToAction("ListAllWines");
-        }
-
-        [ActionName("details")]
-        public ActionResult Details(int id)
-        {
-            var wine = _wineRepository.GetByID(id);
-            if (wine == null)
-            {
-                return Content("This wine does not exist");
-            }
-            WineViewModel model = new WineViewModel()
-            {
-                CountryID = wine.CountryID,
-                RegionID = wine.RegionID,
-                TypeID = wine.TypeID,
-                WineID= wine.WineID,
-
-                Vintage = wine.Vintage,
-                Name = wine.Name,
-                Description = wine.Description,
-                ImagePath = wine.ImagePath,
-                BottleSizeID = wine.BottleSizeID,
-                Types = wine.Types.TypeName,
-                Price= wine.Price,
-              
-                RegionName = wine.Regions.RegionName,
-                CountryName = wine.Countrys.CountryName,
-                SubTypes = wine.SubTypes.SubTypeName
-
-            };          
-
-            return View(model);
-        }
-
-        public ActionResult EditWine(int id)
-        {
-            WineViewModel model;
-            var wine = _wineRepository.GetByID(id);
-            if (wine == null)
-            {
-                return Json(new { success = false, message = "No item found" });
-            }
-            model = new WineViewModel(wine);
-            model.TypesList = _typesRepository.GetTypes();
-            model.SubTypesList = _subTypeRepository.GetAll();
-            model.BottleSizeList = _bottleSizeRepository.GetAll();
-            model.RegionList = _regionRepository.GetAll();
-            model.CountryList = db.Countries.ToList();
-
-            return View(model);
-        }
-
-        public ActionResult UpdateWine(WineViewModel model)
-        {
-            Wine wine = _wineRepository.GetByID(model.WineID);
-            if (wine == null)
-            {
-                return Json(new { success = false, message = "No item found" });
-            }
-            wine.Name = model.Name;
-            wine.RegionID = model.RegionID;
-            wine.CountryID = model.CountryID;
-            wine.BottleSizeID = model.BottleSizeID;
-            wine.Description = model.Description;
-            wine.ImagePath = model.ImagePath;
-            wine.Vintage = model.Vintage;
-            wine.Price = model.Price;
-            wine.WineID = model.WineID;
-
-
-            _wineRepository.Update(wine);
-            return RedirectToAction("details",wine.WineID);
-         //  return Json(new { success = true, message = "Success" }, JsonRequestBehavior.AllowGet);
-
         }
 
 
