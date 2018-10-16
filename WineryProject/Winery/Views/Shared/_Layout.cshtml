@@ -70,7 +70,8 @@
             success: function (response) {
 
                 console.log(response);
-            }
+                window.location.href ='@Url.Action("GetByName", "Wine")'+'?name=' + wineInput;
+                    }
             });
    }
 

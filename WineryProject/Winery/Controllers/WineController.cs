@@ -52,13 +52,9 @@ namespace Winery.Controllers
         }
 
         public ActionResult GetByName(string name)
-
-        {
-            
-            var wines = _wineRepository.GetByName(name).Select(t => new WineViewModel
-           
+        {           
+            var wines = _wineRepository.GetByName(name).Select(t => new WineViewModel           
             {
-
                 CountryID = t.CountryID,
                 RegionID = t.RegionID,
                 TypeID = t.TypeID,
@@ -72,9 +68,7 @@ namespace Winery.Controllers
 
                 RegionName = t.Regions.RegionName,
                 CountryName = t.Countrys.CountryName
-
-
-            });
+            }).ToList();
             if (wines == null)
             {
                 return Content("This wine does not exist");
