@@ -171,7 +171,7 @@ namespace Winery.Controllers.Admin
         public ActionResult DeleteWine(int id)
         {
             _wineRepository.Delete(id);
-            return RedirectToAction("ListAllWines");
+            return RedirectToAction("wines");
         }
 
         [ActionName("details")]
@@ -224,30 +224,75 @@ namespace Winery.Controllers.Admin
             return View(model);
         }
 
+        [HttpPost]
         public ActionResult UpdateWine(WineViewModel model)
         {
-            Wine wine = _wineRepository.GetByID(model.WineID);
-            if (wine == null)
-            {
-                return Json(new { success = false, message = "No item found" });
-            }
+           Wine wine = _wineRepository.GetByID(model.WineID);
+             if (wine == null)
+             {
+                 return Json(new { success = false, message = "No item found" });
+             }
             wine.Name = model.Name;
-            wine.RegionID = model.RegionID;
-            wine.CountryID = model.CountryID;
-            wine.BottleSizeID = model.BottleSizeID;
-            wine.Description = model.Description;
-            wine.ImagePath = model.ImagePath;
-            wine.Vintage = model.Vintage;
-            wine.Price = model.Price;
-            wine.WineID = model.WineID;
+                wine.RegionID = model.RegionID;
+                wine.CountryID = model.CountryID;
+                wine.BottleSizeID = model.BottleSizeID;
+                wine.Description = model.Description;
+                wine.Vintage = model.Vintage;
+                wine.Price = model.Price;
+                wine.WineID = model.WineID;
+                wine.SubTypeID = model.SubTypeID;
+                wine.TypeID = model.TypeID;
+
+                if (model.File != null && model.File.ContentLength > 0)
+                {
+                    var uploadDir = "~/Content/img/uploads";
+                    var imagePath = Path.Combine(Server.MapPath(uploadDir), model.File.FileName);
+                    var imageUrl = Path.Combine(uploadDir, model.File.FileName);
+                    model.File.SaveAs(imagePath);
+                    wine.ImagePath = imageUrl;
+                }
+
+                _wineRepository.Update(wine);
+
+            return Json(new { success = true, message = "Success" }, JsonRequestBehavior.AllowGet);
 
 
-            _wineRepository.Update(wine);
-            return RedirectToAction("details",wine.WineID);
-         //  return Json(new { success = true, message = "Success" }, JsonRequestBehavior.AllowGet);
 
         }
 
 
+        // Wine wine = _wineRepository.GetByID(model.WineID);
+        // if (wine == null)
+        // {
+        //     return Json(new { success = false, message = "No item found" });
+        // }
+        // wine.Name = model.Name;
+        // wine.RegionID = model.RegionID;
+        // wine.CountryID = model.CountryID;
+        // wine.BottleSizeID = model.BottleSizeID;
+        // wine.Description = model.Description;
+        //// wine.ImagePath = model.ImagePath;
+        // wine.Vintage = model.Vintage;
+        // wine.Price = model.Price;
+        // wine.WineID = model.WineID;
+        // wine.SubTypeID = model.SubTypeID;
+        // wine.TypeID = model.TypeID;
+        // if (model.File != null && model.File.ContentLength > 0)
+        // {
+        //     var uploadDir = "~/Content/img/uploads";
+        //     var imagePath = Path.Combine(Server.MapPath(uploadDir), model.File.FileName);
+        //     var imageUrl = Path.Combine(uploadDir, model.File.FileName);
+        //     model.File.SaveAs(imagePath);
+        //     wine.ImagePath = imageUrl;
+        // }
+
+
+        // _wineRepository.Update(wine);
+
+        //return Json(new { success = true, message = "Success" }, JsonRequestBehavior.AllowGet);
+
     }
+
+
+
 }

@@ -1,9 +1,8 @@
 ﻿@model Winery.Models.WineViewModel
 
 @{
-    //ViewBag.Title = "details";
-    //Layout = "~/Views/Shared/_DashboardLayout.cshtml";
-   // var wineId = Model.WineID ;
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 
 }
 
@@ -11,7 +10,7 @@
     <div class="row py-5">
 
         <div class="col-md-4">
-            <img src="@Url.Content(Model.ImagePath)" alt="wine " class="img img-fluid img-thumbnail" />
+            <img src="@Url.Content(Model.ImagePath)" alt="wine "height="250" width="250" class="img img-thumbnail" />
 
         </div>
 
@@ -40,8 +39,8 @@
 
     </div>
     <p>
-        <a href="@Url.Action("EditWine","AdminWine")?id=@Model.WineID">EDIT WINE</a> 
-      
+        
+        <a class="btn btn-lg btn-warning btn-block py-5 mt-5" href="@Url.Action("EditWine","AdminWine")?id=@Model.WineID">EDIT WINE</a>
 
     </p>
 </div>
