@@ -409,7 +409,6 @@
     <Content Include="Views\AdminWine\TypesMenuPartial.cshtml" />
     <Content Include="Views\Wine\GetByType.cshtml" />
     <Content Include="Views\AdminWine\ListWine.cshtml" />
-    <Content Include="Views\Wine\GetByName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

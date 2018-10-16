@@ -44,7 +44,7 @@ namespace Winery.Models
         [DisplayName("Upload image")]
         public HttpPostedFileBase File { get; set; }
 
-       
+
         public string Types { get; set; }
         public string RegionName { get; set; }
         public string CountryName { get; set; }
