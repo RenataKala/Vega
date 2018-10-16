@@ -20,7 +20,7 @@ namespace Winery.Controllers.Admin
         private readonly ITypesRepository _typesRepository;
         private readonly IBottleSize _bottleSizeRepository;
         private readonly IRegion _regionRepository;
-      
+
 
         public AdminWineController()
         {
@@ -36,20 +36,20 @@ namespace Winery.Controllers.Admin
         {
             return View();
         }
-              
+
         public ActionResult Create()
         {
-           var model = new WineViewModel();
-           model.TypesList = _typesRepository.GetTypes();
-           model.SubTypesList = _subTypeRepository.GetAll();
-           model.BottleSizeList = _bottleSizeRepository.GetAll();
-           model.RegionList = _regionRepository.GetAll();
-           model.CountryList = db.Countries.ToList();
-           
+            var model = new WineViewModel();
+            model.TypesList = _typesRepository.GetTypes();
+            model.SubTypesList = _subTypeRepository.GetAll();
+            model.BottleSizeList = _bottleSizeRepository.GetAll();
+            model.RegionList = _regionRepository.GetAll();
+            model.CountryList = db.Countries.ToList();
+
             return View(model);
         }
 
-     
+
         [HttpPost]
         public ActionResult Create(WineViewModel model)
         {
@@ -61,19 +61,19 @@ namespace Winery.Controllers.Admin
         "image/png"
    };
 
-                if (model.File == null || model.File.ContentLength == 0)
+            if (model.File == null || model.File.ContentLength == 0)
             {
                 ModelState.AddModelError("File", "This field is required");
             }
-                else if (!validImageTypes.Contains(model.File.ContentType))
+            else if (!validImageTypes.Contains(model.File.ContentType))
             {
                 ModelState.AddModelError("ImageUpload", "Please choose either a GIF, JPG or PNG image.");
             }
 
-          
+
 
             if (ModelState.IsValid)
-            {              
+            {
                 var wine = new Wine
                 {
                     WineID = model.WineID,
@@ -85,10 +85,10 @@ namespace Winery.Controllers.Admin
                     Vintage = model.Vintage,
                     Name = model.Name,
                     Description = model.Description,
-                    
+
                 };
-        
-        if (model.File != null && model.File.ContentLength > 0)
+
+                if (model.File != null && model.File.ContentLength > 0)
                 {
                     var uploadDir = "~/Content/img/uploads";
                     var imagePath = Path.Combine(Server.MapPath(uploadDir), model.File.FileName);
@@ -96,9 +96,9 @@ namespace Winery.Controllers.Admin
                     model.File.SaveAs(imagePath);
                     wine.ImagePath = imageUrl;
                 }
-            
+
                 _wineRepository.Insert(wine);
-              
+
                 return RedirectToAction("Index");
             }
 
@@ -164,7 +164,7 @@ namespace Winery.Controllers.Admin
 
 
             }).ToList();
-            return View(wine);         
+            return View(wine);
         }
 
 

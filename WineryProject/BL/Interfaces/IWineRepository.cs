@@ -17,5 +17,6 @@ namespace BL.Interfaces
         void Delete(int wineID);
         bool Exists(int wineID);
         List<Wine> GetByType(string type);
+        List<Wine> GetByName(string name);
     }
 }
