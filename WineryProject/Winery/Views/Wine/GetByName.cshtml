@@ -4,114 +4,40 @@
     ViewBag.Title = "GetByName";
 }
 
-<h2>GetByName</h2>
+@foreach (var item in @Model)
+{
+    <div class="container">
+        <div class="row py-5">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.WineID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TypeID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegionID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CountryID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BottleSizeID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubTypeID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vintage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Types)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegionName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CountryName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubTypes)
-        </th>
-        <th></th>
-    </tr>
+            <div class="col-md-4">
+                <img src="@item.ImagePath" alt="wine " class="img img-fluid" />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.WineID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TypeID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegionID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CountryID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BottleSizeID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubTypeID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vintage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImagePath)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Types)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegionName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CountryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubTypes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item">Name :  <strong>@Html.DisplayFor(model => item.Name)</strong> </li>
+                        <li class="list-group-item">Region:  <strong> @Html.DisplayFor(model => item.RegionName)</strong></li>
+                        <li class="list-group-item">Country:  <strong> @Html.DisplayFor(model => item.CountryName)</strong></li>
+                        <li class="list-group-item">Vintage: <strong>@Html.DisplayFor(model => item.Vintage)</strong>  </li>
+                        <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => item.Types)</strong> </li>
+                        <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => item.SubTypes)</strong>  </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item">Description: <strong> @Html.DisplayFor(model => item.Description)</strong> </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
 }
-
-</table>
