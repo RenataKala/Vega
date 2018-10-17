@@ -28,4 +28,20 @@
     height: 100%;
     font-family: 'Numans', sans-serif;
 }
+span.loader {
+    display: none;
+}
+
+span.ajaxmsg {
+    
+    padding: 10px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+
+.ajaxcart {
+    position: relative;
+    top: 5px;
+}
 
