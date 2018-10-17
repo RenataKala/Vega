@@ -21,4 +21,11 @@
 .ib {
     display: inline-block !important;
 }
+.loginRow {
+    background-image: url("img/degustacija.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
 
