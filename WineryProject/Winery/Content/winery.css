@@ -18,4 +18,7 @@
     clear: both;
     display: table;
 }
+.ib {
+    display: inline-block !important;
+}
 

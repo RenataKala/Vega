@@ -200,6 +200,7 @@
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Admin\AdminRegionCountryController.cs" />
     <Compile Include="Controllers\Admin\AdminWineController.cs" />
+    <Compile Include="Controllers\Admin\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WineController.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\BottleSizeViewModel.cs" />
+    <Compile Include="Models\CartVM.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\CustomVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -413,8 +415,12 @@
     <Content Include="Views\AdminWine\details.cshtml" />
     <Content Include="Views\AdminWine\EditWine.cshtml" />
     <Content Include="Views\Wine\GetByName.cshtml" />
-    <Content Include="Views\Wine\all-wines.cshtml" />
     <Content Include="Views\Wine\GetByTypePartial.cshtml" />
+    <Content Include="Views\Cart\CartPartial.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\AddToCartPartial.cshtml" />
+    <Content Include="Views\Wine\all-wines.cshtml" />
+    <Content Include="Views\Wine\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

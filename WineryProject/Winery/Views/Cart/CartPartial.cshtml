@@ -1,0 +1,7 @@
+﻿@model Winery.Models.CartVM
+
+<div class="ajaxcart" style="color:white;">
+    Your cart: @Model.Quantity wine(s) - $@Model.Price
+    <br />
+    @Html.ActionLink("Checkout", "Index")
+</div>

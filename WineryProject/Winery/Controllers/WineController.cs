@@ -78,16 +78,59 @@ namespace Winery.Controllers
         [ActionName("all-wines")]
         public ActionResult AllWines()
         {
-            var list = _typesRepository.GetTypes()
-                .Select(t => new TypesViewModel
-                {
-                    TypeID = t.TypeID,
-                    TypeName = t.TypeName
+            var wines = _wineRepository.GetAll().Select(t => new WineViewModel
+            {
+                WineID = t.WineID,
+                CountryID = t.CountryID,
+                RegionID = t.RegionID,
+                TypeID = t.TypeID,
+                SubTypeID = t.SubTypeID,
+                Vintage = t.Vintage,
+                Name = t.Name,
+                Description = t.Description,
+                ImagePath = t.ImagePath,
+                BottleSizeID = t.BottleSizeID,
+                Types = t.Types.TypeName,
+                SubTypes = t.SubTypes.SubTypeName,
+                RegionName = t.Regions.RegionName,
+                CountryName = t.Countrys.CountryName,
+                Price= t.Price
 
-                });
-            return View(list);
+
+            }).ToList();
+            return View(wines);
         }
-        
+        public ActionResult Details(int id)
+        {
+            var wine = _wineRepository.GetByID(id);
+            if (wine == null)
+            {
+                return Content("This wine does not exist");
+            }
+            WineViewModel model = new WineViewModel()
+            {
+                CountryID = wine.CountryID,
+                RegionID = wine.RegionID,
+                TypeID = wine.TypeID,
+                WineID = wine.WineID,
+
+                Vintage = wine.Vintage,
+                Name = wine.Name,
+                Description = wine.Description,
+                ImagePath = wine.ImagePath,
+                BottleSizeID = wine.BottleSizeID,
+                Types = wine.Types.TypeName,
+                Price = wine.Price,
+
+                RegionName = wine.Regions.RegionName,
+                CountryName = wine.Countrys.CountryName,
+                SubTypes = wine.SubTypes.SubTypeName
+
+            };
+
+            return View(model);
+        }
+
         public ActionResult GetByTypePartial(string type)
         {
             var wines = _wineRepository.GetByType(type).Select(t => new WineViewModel

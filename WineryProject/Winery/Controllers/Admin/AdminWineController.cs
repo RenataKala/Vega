@@ -188,7 +188,7 @@ namespace Winery.Controllers.Admin
                 RegionID = wine.RegionID,
                 TypeID = wine.TypeID,
                 WineID= wine.WineID,
-
+                
                 Vintage = wine.Vintage,
                 Name = wine.Name,
                 Description = wine.Description,
