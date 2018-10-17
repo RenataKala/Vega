@@ -8,8 +8,6 @@
 
 <table class="table">
     <tr>
-
-
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -64,8 +62,8 @@
             @Html.DisplayFor(modelItem => item.SubTypes)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.WineID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.WineID }) |
+            @Html.ActionLink("Edit", "EditWine", new { id = item.WineID }) |
+            @Html.ActionLink("Details", "details", new { id = item.WineID }) |
             @Html.ActionLink("Delete", "DeleteWine", new { id = item.WineID })
         </td>
     </tr>
