@@ -37,7 +37,7 @@
                         <i class="fa fa-user"></i> @User.Identity.GetUserName()
                     </a>
                     <div class="dropdown-menu bg-light">
-                        <a href="/account/profiledetails" class="nav-link dropdown-item text-justify pr-5 pl-5 ">
+                        <a href="@Url.Action("Index", "Cart")" class="nav-link dropdown-item text-justify pr-5 pl-5 ">
                             <i class="fa fa-user-circle"></i> Profile
                         </a>
                         <a class="nav-link dropdown-item text-justify pr-5 pl-5 " href="javascript:document.getElementById('logoutForm').submit()">

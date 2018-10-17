@@ -53,8 +53,8 @@ else
                     <img src="@Url.Content(item.Image)" height="200" width="150" />
                 </td>
                 <td>
-                    <a href="#" class="incrproduct" data-id="@item.ProductId">+</a>
-                    <a href="#" class="decrproduct" data-id="@item.ProductId">-</a>
+                    <a href="#" class="icons incrproduct" data-id="@item.ProductId"><i class=" fa fa-plus-circle p-1"></i></a>
+                    <a href="#" class=" icons decrproduct" data-id="@item.ProductId"><i class="fa fa-minus-circle p-1"></i></a><br />
                     <a href="#" class="removeproduct" data-id="@item.ProductId">Remove</a>
                 </td>
                 <td class="total@(item.ProductId)">
