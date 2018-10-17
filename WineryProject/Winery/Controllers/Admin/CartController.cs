@@ -118,5 +118,58 @@ namespace Winery.Controllers.Admin
             // Return partial view with model
             return PartialView(model);
         }
+
+        public JsonResult IncrementProduct(int productId)
+        {
+            // Init cart list
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+
+            // Get cartVM from list
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+
+                // Increment qty
+                model.Quantity++;
+
+                // Store needed data
+                var result = new { qty = model.Quantity, price = model.Price };
+
+                // Return json with data
+                return Json(result, JsonRequestBehavior.AllowGet);
+           }
+
+        public ActionResult DecrementProduct(int productId)
+        {
+            // Init cart
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+                            
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+                          
+                if (model.Quantity > 1)
+                {
+                    model.Quantity--;
+                }
+                else
+                {
+                    model.Quantity = 0;
+                    cart.Remove(model);
+                }
+
+                // Store needed data
+                var result = new { qty = model.Quantity, price = model.Price };
+                       
+                return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public void RemoveProduct(int productId)
+        {
+            // Init cart list
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+                    
+                // Get model from list
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+
+                // Remove model from list
+                cart.Remove(model);
+        }
     }
 }
