@@ -19,19 +19,22 @@
                     <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => model.Types)</strong> </li>
                     <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => model.SubTypes)</strong>  </li>
                     <li class="list-group-item">Price: <strong>@Html.DisplayFor(model => model.Price)</strong>  </li>
+
                 </ul>
+                <span class="ajaxmsg bg-success">The product has been added to your cart.</span>
             </div>
             <div class="addtocart">
+                
                 <a href="#" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Add to cart</a>
                 <span class="loader">
                     <img src="~/Content/img/ajax-loader.gif" />
                 </span>
-                <div></div>
+
             </div>
-            <span class="ajaxmsg bg-success">The product has been added to your cart.</span>
+
 
         </div>
-        
+
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <ul class="list-group list-group-flush text-left">
@@ -39,7 +42,7 @@
                 </ul>
             </div>
         </div>
-
+       
     </div>
     
 

@@ -34,9 +34,9 @@ span.loader {
 
 span.ajaxmsg {
     
-    padding: 10px;
+    padding: 5px;
     display: none;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
