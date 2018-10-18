@@ -8,11 +8,11 @@
 @foreach (var item in @Model)
 {
     <div class="container">
+
         <div class="row py-5">
 
             <div class="col-md-4">
-                <img src="@Url.Content(item.ImagePath)" alt="wine " class="img img-fluid" />
-
+                <img src="@Url.Content(item.ImagePath)" alt="wine " height="250" width="150" class="img img-fluid" />
             </div>
 
             <div class="col-md-4">
@@ -37,12 +37,12 @@
                 </div>
                 @*<div class="addtocart">
 
-                    <a href="@Url.Action("Details", "Wine")" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Go to Store</a>
-                    <span class="loader">
-                        <img src="~/Content/img/ajax-loader.gif" />
-                    </span>
+                        <a href="@Url.Action("Details", "Wine")" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Go to Store</a>
+                        <span class="loader">
+                            <img src="~/Content/img/ajax-loader.gif" />
+                        </span>
 
-                </div>*@
+                    </div>*@
             </div>
 
 
@@ -51,8 +51,8 @@
 
     </div>
     <script src="~/Scripts/jquery-3.3.1.js"></script>
-    
 
-   
+
+
 
 }
