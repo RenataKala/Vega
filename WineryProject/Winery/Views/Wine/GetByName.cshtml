@@ -6,38 +6,49 @@
 
 @foreach (var item in @Model)
 {
-    <div class="container">
-        <div class="row py-5">
+<div class="container">
+    <div class="row py-5">
 
-            <div class="col-md-4">
-                <img src="@Url.Content(item.ImagePath)" alt="wine " class="img img-fluid" />
-
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush text-left">
-                        <li class="list-group-item">Name :  <strong>@Html.DisplayFor(model => item.Name)</strong> </li>
-                        <li class="list-group-item">Region:  <strong> @Html.DisplayFor(model => item.RegionName)</strong></li>
-                        <li class="list-group-item">Country:  <strong> @Html.DisplayFor(model => item.CountryName)</strong></li>
-                        <li class="list-group-item">Vintage: <strong>@Html.DisplayFor(model => item.Vintage)</strong>  </li>
-                        <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => item.Types)</strong> </li>
-                        <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => item.SubTypes)</strong>  </li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush text-left">
-                        <li class="list-group-item">Description: <strong> @Html.DisplayFor(model => item.Description)</strong> </li>
-                    </ul>
-                </div>
-            </div>
-
-
+        <div class="col-md-4">
+            <img src="@Url.Content(item.ImagePath)" alt="wine " class="img img-fluid" />
 
         </div>
 
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item">Name :  <strong>@Html.DisplayFor(model => item.Name)</strong> </li>
+                    <li class="list-group-item">Region:  <strong> @Html.DisplayFor(model => item.RegionName)</strong></li>
+                    <li class="list-group-item">Country:  <strong> @Html.DisplayFor(model => item.CountryName)</strong></li>
+                    <li class="list-group-item">Vintage: <strong>@Html.DisplayFor(model => item.Vintage)</strong>  </li>
+                    <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => item.Types)</strong> </li>
+                    <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => item.SubTypes)</strong>  </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item">Description: <strong> @Html.DisplayFor(model => item.Description)</strong> </li>
+                </ul>
+            </div>
+            <div class="addtocart">
+
+                <a href="~/Views/Wine/Details.cshtml" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Add to cart</a>
+                <span class="loader">
+                    <img src="~/Content/img/ajax-loader.gif" />
+                </span>
+
+            </div>
+        </div>
+
+
+
     </div>
+
+
+
+</div>
 }
+

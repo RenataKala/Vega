@@ -21,7 +21,7 @@
                     <li class="nav-item dropdown">
                         <a class="menu nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-glass" aria-hidden="true"></i>
-                            Choose
+                            Wine
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=red">Red</a>
@@ -31,15 +31,17 @@
                             <a class="dropdown-item" href="@Url.Action("GetByType", "Wine")?type=dessert">Dessert</a>
                         </div>
                     </li>
-                    <li class="nav-item ">
+                    @*<li class="nav-item ">
                         <a class="nav-link menu" href="#">Food</a>
-                    </li>
+                    </li>*@
                     <li class="nav-item">
-                        <a class="nav-link menu" href="@Url.Action("all-wines","Wine")">Wines</a>
+                        <a class="nav-link menu" href="@Url.Action("all-wines","Wine")">
+                        <i class="fas fa-shopping-cart aria-hidden="true"></i>
+                        Store</a>
                         </li>
                 </ul>
               
-                    <input class="form-control-md mr-sm-2 pl-1" id="searchName" type="search" placeholder="Search by name" aria-label="Search">
+                    <input class="form-control-md mr-sm-2 pl-1" id="searchName" type="search" placeholder="Wine name" aria-label="Search">
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit" onclick="getByName()">Search</button>
               
             </div>
