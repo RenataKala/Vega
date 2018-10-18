@@ -43,7 +43,8 @@ else
                 </td>
                 <td>
 
-                    @Html.ActionLink("Delete", "DeleteBottleSize", new { id = item.BottleSizeID }, new { @class = "delete" })
+                    @Html.ActionLink("Delete", "DeleteBottleSize", new { id = item.BottleSizeID, @class = "delete" }, 
+                   new { onclick = "return confirm('Are you sure you want to delete?');" })
                 </td>
             </tr>
         }

@@ -42,7 +42,8 @@ else
                 </td>
                 <td>
 
-                    @Html.ActionLink("Delete", "DeleteSubType", new { id = item.SubTypeID }, new { @class = "delete" })
+                    @Html.ActionLink("Delete", "DeleteSubType", new { id = item.SubTypeID, @class = "delete" },
+                   new {onclick= "return confirm('Are you sure you want to delete this subtype name?'); "})
                 </td>
             </tr>
         }

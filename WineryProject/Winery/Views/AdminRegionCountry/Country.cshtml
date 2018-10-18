@@ -27,7 +27,9 @@
                         @Html.EditorFor(modelItem => item.CountryName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     </td>
                     <td>
-                        @Html.ActionLink("Delete", "DeleteCountry", new { id = item.CountryID }, new { @class = "delete" })
+                        @Html.ActionLink("Delete", "DeleteCountry", new { id = item.CountryID, @class = "delete" },
+                       new { onclick = "return confirm('Are you sure you wish to delete this country?');" }
+                      )
                     </td>
                 </tr>
             }
@@ -53,24 +55,37 @@
                   //alert("Country added");
                   var data = response.trim();
 
-                  if (data === "This country is already on the list")
-                  {
+                  if (data === "This country is already on the list") {
                       alertdiv.html(`<div class="alert alert-danger display-4 mt-4" role="alert">
-                          This country is already on the list </div >`);                     
+                          This country is already on the list </div >`);
+                  
+                  setTimeout(function () {
+                      alertdiv.fadeOut("fast", function () {
+                          alertdiv.html("<img src=/Content/img/ajax-loader.gif />");
+                      });
+                  }, 2000);
+                  return false;
                   }
                   else {
                       alertdiv.html(`<div class="alert alert-success display-4 mt-5" role="alert">
                             You successfully added new country.</div>`);
-
-                  
+                      setTimeout(function () {
+                          alertdiv.fadeOut("fast", function () {
+                              alertdiv.html("<img src=/Content/img/ajax-loader.gif />");
+                          });
+                      }, 2000);
+                                     
                   var table = $("#countryTable tbody");
                   var toAppend = $("#countryTable tbody tr:last").clone();
                   toAppend.attr("CountryID", "id_" + response);
                   toAppend.find("#item_CountryName").val(country);
                   toAppend.find("a.delete").attr("href", "/adminregioncountry/deletecountry/" + response);
-                   table.append(toAppend);
+                      table.append(toAppend);
+                    
                   }
-                }
+                  window.location.href = '@Url.Action("Country", "AdminRegionCountry")';
+              }
+             
             });
     }   
 

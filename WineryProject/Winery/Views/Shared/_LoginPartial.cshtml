@@ -14,14 +14,14 @@
         {
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-3">
-                    <a href="/admin/index" class="nav-link  text-info dropdown-toggle" data-toggle="dropdown">
+                    <a href="/admin/index" class="nav-link  text-light dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-user"></i> @User.Identity.GetUserName()
                     </a>
                     <div class="dropdown-menu bg-light">
-                        <a href="/admin/index" class="nav-link dropdown-item text-justify pr-5 pl-5 ">
+                        <a href="/admin/index" class="nav-link dropdown-item text-dark text-justify pr-5 pl-5 ">
                             <i class="fa fa-user-circle"></i> DASHBOARD
                         </a>
-                        <a class="nav-link dropdown-item text-justify pr-5 pl-5" href="javascript:document.getElementById('logoutForm').submit()">
+                        <a class="nav-link dropdown-item text-justify text-dark pr-5 pl-5" href="javascript:document.getElementById('logoutForm').submit()">
                             <i class="fa fa-user-times "></i>LOG OUT
                         </a>
                     </div>

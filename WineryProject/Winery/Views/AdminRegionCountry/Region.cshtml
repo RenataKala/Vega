@@ -25,7 +25,7 @@
                         @Html.EditorFor(modelItem => item.RegionName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     </td>
                     <td>
-                        @Html.ActionLink("Delete", "DeleteRegion", new { id = item.RegionID }, new { @class = "delete" })
+                        @Html.ActionLink("Delete", "DeleteRegion", new { id = item.RegionID, @class = "delete" }, new { onclick = "return confirm('Are you sure you wish to delete this region?');" })
                     </td>
                 </tr>
             }
@@ -49,7 +49,7 @@
                 
              success: function (response) {
                     
-                      var data = response.trim();
+                 var data = response.trim();
                  if (data === "Must enter a region name") {
                      alertdiv.html(`<div class="alert alert-danger display-4 mt-4" role="alert">
                          Must enter a region name </div >`);

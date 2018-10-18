@@ -47,7 +47,7 @@ namespace Winery.Controllers.Admin
 
         public string AddRegion(RegionViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return "Must enter a region name";
             }
