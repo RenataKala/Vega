@@ -24,6 +24,7 @@
                         <li class="list-group-item">Vintage: <strong>@Html.DisplayFor(model => item.Vintage)</strong>  </li>
                         <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => item.Types)</strong> </li>
                         <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => item.SubTypes)</strong>  </li>
+                        <li class="list-group-item">Price: <strong>@Html.DisplayFor(model => item.Price)</strong>  </li>
 
                     </ul>
                 </div>
@@ -34,6 +35,14 @@
                         <li class="list-group-item">Description: <strong> @Html.DisplayFor(model => item.Description)</strong> </li>
                     </ul>
                 </div>
+                @*<div class="addtocart">
+
+                    <a href="@Url.Action("Details", "Wine")" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Go to Store</a>
+                    <span class="loader">
+                        <img src="~/Content/img/ajax-loader.gif" />
+                    </span>
+
+                </div>*@
             </div>
 
 
@@ -41,4 +50,9 @@
         </div>
 
     </div>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    
+
+   
+
 }
