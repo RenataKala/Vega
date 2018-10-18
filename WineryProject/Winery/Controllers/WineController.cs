@@ -41,7 +41,9 @@ namespace Winery.Controllers
                 ImagePath = t.ImagePath,
                 BottleSizeID = t.BottleSizeID,
                 Types = t.Types.TypeName,
-
+                SubTypes = t.SubTypes.SubTypeName,
+                Price = t.Price,
+                WineID = t.WineID,
                 RegionName = t.Regions.RegionName,
                 CountryName = t.Countrys.CountryName
 
@@ -57,14 +59,16 @@ namespace Winery.Controllers
                 CountryID = t.CountryID,
                 RegionID = t.RegionID,
                 TypeID = t.TypeID,
-
+                SubTypeID=t.SubTypeID,
+                WineID = t.WineID,
                 Vintage = t.Vintage,
                 Name = t.Name,
                 Description = t.Description,
                 ImagePath = t.ImagePath,
                 BottleSizeID = t.BottleSizeID,
                 Types = t.Types.TypeName,
-
+                SubTypes = t.SubTypes.SubTypeName,
+                Price = t.Price,
                 RegionName = t.Regions.RegionName,
                 CountryName = t.Countrys.CountryName
             }).ToList();
