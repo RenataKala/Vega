@@ -32,54 +32,23 @@
                         </div>
                     </li>
                     @*<li class="nav-item ">
-                            <a class="nav-link menu" href="#">Food</a>
-                        </li>*@
+                        <a class="nav-link menu" href="#">Food</a>
+                    </li>*@
                     <li class="nav-item">
                         <a class="nav-link menu" href="@Url.Action("all-wines","Wine")">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            Store
-                        </a>
-                    </li>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        Store</a>
+                        </li>
                 </ul>
-
-                <input class="form-control-md mr-sm-2 pl-1" id="searchName" type="search" placeholder="Wine name" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit" onclick="getByName()">Search</button>
-
+              
+                    <input class="form-control-md mr-sm-2 pl-1" id="searchName" type="search" placeholder="Wine name" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit" onclick="getByName()">Search</button>
+              
             </div>
-            @Html.Partial("_LoginPartial")
-
+            @Html.Partial("_LoginPartial")         
+          
         </div>
     </nav>
-
-    <div class="sticky-container">
-        <ul class="sticky">
-            <li>
-                <img src="~/Content/img/png/facebook_circle-512.png" width="32" height="32">
-                <p><a href="#" target="_blank">Like Us on<br>Facebook</a></p>
-            </li>
-            <li>
-                <img src="~/Content/img/png/twitter.png" width="32" height="32">
-                <p><a href="#" target="_blank">Follow Us on<br>Twitter</a></p>
-            </li>
-            <li>
-                <img src="~/Content/img/png/Google-plus-circle-icon-png.png" width="32" height="32">
-                <p><a href="#" target="_blank">Follow Us on<br>Google+</a></p>
-            </li>
-            <li>
-                <img src="~/Content/img/png/linkedin-icon-png-circle-2.png" width="32" height="32">
-                <p><a href="#" target="_blank">Follow Us on<br>LinkedIn</a></p>
-            </li>
-            <li>
-                <img src="~/Content/img/png/youtube png.png" width="32" height="32">
-                <p><a href="#" target="_blank">Subscribe on<br>YouYube</a></p>
-            </li>
-            <li>
-                <img src="~/Content/img/png/pinterest_badge_red.png" width="32" height="32">
-                <p><a href="#" target="_blank">Follow Us on<br>Pinterest</a></p>
-            </li>
-        </ul>
-    </div>
-
     <div class="container body-content">
         @RenderBody()
         <hr />

@@ -261,12 +261,6 @@
     <Content Include="Content\img\img grapes\Sauvignon-Blanc-Wine-Bottle-WineFolly-3eb4138 %281%29.jpg" />
     <Content Include="Content\img\img grapes\Syrah-Wine-Bottle-WineFolly-3eb4138.jpg" />
     <Content Include="Content\img\index.jpg" />
-    <Content Include="Content\img\png\facebook_circle-512.png" />
-    <Content Include="Content\img\png\Google-plus-circle-icon-png.png" />
-    <Content Include="Content\img\png\linkedin-icon-png-circle-2.png" />
-    <Content Include="Content\img\png\pinterest_badge_red.png" />
-    <Content Include="Content\img\png\twitter.png" />
-    <Content Include="Content\img\png\youtube png.png" />
     <Content Include="Content\img\red.jpg" />
     <Content Include="Content\img\rose.jpg" />
     <Content Include="Content\img\serving wine.jpg" />
