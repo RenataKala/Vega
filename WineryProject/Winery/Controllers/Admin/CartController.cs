@@ -12,6 +12,7 @@ namespace Winery.Controllers.Admin
     public class CartController : Controller
     {
         private readonly IWineRepository _wineRepository;
+
         public CartController()
         {
             _wineRepository = new WineRepository();
@@ -27,7 +28,6 @@ namespace Winery.Controllers.Admin
                 ViewBag.Message = "Your cart is empty.";
                 return View();
             }
-
             decimal total = 0m;
             //loop tru cart items and append to total
             foreach (var item in cart)

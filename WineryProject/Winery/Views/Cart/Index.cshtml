@@ -70,7 +70,7 @@ else
             <td></td>
             <td></td>
             <td></td>
-            <td class="grandtotal"><b>Grand total</b> $<span>@ViewBag.GrandTotal</span></td>
+            <td class="grandtotal"><h3>Grand total: $<span>@ViewBag.GrandTotal</span></h3></td>
         </tr>
 
     </table>
@@ -78,7 +78,6 @@ else
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {
-
             /*
             * Increment product
             */
@@ -102,13 +101,7 @@ else
                     var grandtotal = (gt + data.price).toFixed(2);
 
                     $("td.grandtotal span").text(grandtotal);
-                }).done(function (data) {
-                    var url2 = "/cart/PaypalPartial";
-
-                    $.get(url2, {}, function (data) {
-                        $('div.paypaldiv').html(data);
-                    });
-                });
+                })
             });
 
             //////////////////////////////////////////////////////////////
@@ -125,7 +118,7 @@ else
                 var url = "/cart/DecrementProduct";
 
                 $.getJSON(url, { productId: productId }, function (data) {
-                    if (data.qty == 0) {
+                    if (data.qty === 0) {
                         $this.parent().parent().fadeOut("fast", function () {
                             location.reload();
                         });
@@ -144,13 +137,7 @@ else
                         $("td.grandtotal span").text(grandtotal);
                     }
 
-                }).done(function (data) {
-                    var url2 = "/cart/PaypalPartial";
-
-                    $.get(url2, {}, function (data) {
-                        $('div.paypaldiv').html(data);
-                    });
-                });
+                })
             });
 
             //////////////////////////////////////////////////////////////

@@ -1,7 +1,23 @@
 ﻿@model Winery.Models.CartVM
-
-<div class="ajaxcart" style="color:white;">
-    Your cart: @Model.Quantity wine(s) - $@Model.Price
+@using Microsoft.AspNet.Identity
+<div class="ajaxcart pl-5" style="color:white;">
+    Your cart <i class="fa fa-shopping-cart"></i> :<br /><strong>@Model.Quantity wine(s) - $@Model.Price</strong> 
     <br />
-    @Html.ActionLink("Checkout", "Index")
 </div>
+    @*@Html.ActionLink("Checkout", "Index")*@
+    <ul class="navbar-nav ml-auto pl-4">
+        <li class="nav-item dropdown mr-3">
+            <a href="#" class="nav-link  text-light dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-user"></i> @User.Identity.GetUserName()
+            </a>
+            <div class="dropdown-menu bg-light">
+                <a href="@Url.Action("Index", "Cart")" class="nav-link dropdown-item text-dark text-justify pr-5 pl-5 ">
+                    <i class="fa fa-user-circle"></i> Profile
+                </a>
+                <a class="nav-link dropdown-item text-dark text-justify pr-5 pl-5 " href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="fa fa-user-times"></i>Log out
+                </a>
+            </div>
+        </li>
+
+    </ul>
