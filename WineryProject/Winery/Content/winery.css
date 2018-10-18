@@ -1,10 +1,7 @@
 ﻿span.ajax-text{
     display:none;
 }
-body {
-    font-family: 'Amatic SC', cursive;
-    font-family: 'Libre Baskerville', serif;
-}
+
 
 .column {
     float: left;
@@ -24,13 +21,13 @@ body {
 .ib {
     display: inline-block !important;
 }
-/*.loginRow {
+.loginRow {
     background-image: url("img/degustacija.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
-}*/
+}
 span.loader {
     display: none;
 }

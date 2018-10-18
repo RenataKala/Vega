@@ -14,26 +14,18 @@
 
             </div>
 
-            <div class="col-md-4" >
+            <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                     <ul class="list-group list-group-flush text-left">
                         <li class="list-group-item">Name :  <strong>@Html.DisplayFor(model => item.Name)</strong> </li>
+                        <li class="list-group-item">WineID :  <strong>@Html.DisplayFor(model => item.WineID)</strong> </li>
                         <li class="list-group-item">Region:  <strong> @Html.DisplayFor(model => item.RegionName)</strong></li>
                         <li class="list-group-item">Country:  <strong> @Html.DisplayFor(model => item.CountryName)</strong></li>
                         <li class="list-group-item">Vintage: <strong>@Html.DisplayFor(model => item.Vintage)</strong>  </li>
                         <li class="list-group-item">Type:  <strong>@Html.DisplayFor(model => item.Types)</strong> </li>
                         <li class="list-group-item">Subtype: <strong>@Html.DisplayFor(model => item.SubTypes)</strong>  </li>
-                        <li class="list-group-item">Price: <strong>@Html.DisplayFor(model => item.Price)</strong>  </li>
+
                     </ul>
-                    <span class="ajaxmsg bg-success">The product has been added to your cart.</span>
-                </div>
-                <div class="addtocart">
-
-                    <a href="#" data-id="@item.WineID" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Add to cart</a>
-                    <span class="loader">
-                        <img src="~/Content/img/ajax-loader.gif" />
-                    </span>
-
                 </div>
             </div>
             <div class="col-md-4">
@@ -42,47 +34,24 @@
                         <li class="list-group-item">Description: <strong> @Html.DisplayFor(model => item.Description)</strong> </li>
                     </ul>
                 </div>
+                <div class="addtocart">
 
+                    <a href="#" class="addtocart btn btn-lg btn-outline-danger mr-5 mt-2">Add to cart</a>
+                    <span class="loader">
+                        <img src="~/Content/img/ajax-loader.gif" />
+                    </span>
+
+                </div>
             </div>
+
+
+
         </div>
+
+
+
     </div>
 }
-
-<script src="~/Scripts/jquery-3.3.1.js"></script>
-<script>
-
-    $(document).ready(function () {
-        /*
-           * Add to cart
-           */
-
-        $("a.addtocart").click(function (e) {
-            var id = $("a.addtocart").attr('data-id');
-            e.preventDefault();
-           
-            console.log(id);
-            
-            $("span.loader").addClass("ib");
-
-            var url = '@Url.Action("AddToCartPartial","Cart")' + '?id=' + id;
-
-                $.get(url, function (data) {
-                    $(".ajaxcart").html(data);
-                }).done(function () {
-                    $("span.loader").removeClass("ib");
-                    $("span.ajaxmsg").addClass("ib");
-                    setTimeout(function () {
-                        $("span.ajaxmsg").fadeOut("fast");
-                        $("span.ajaxmsg").removeClass("ib");
-                    }, 1000);
-                });
-        });
-    });
-
-
-
-</script>
-
 
 
 

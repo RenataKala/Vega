@@ -224,11 +224,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\modern-business.css" />
-    <Content Include="Content\img\10dac177e7b22cd1f368ecb50f5dd9ef.gif" />
-    <Content Include="Content\img\2134238-1490390892.gif" />
-    <Content Include="Content\img\8571887_orig.gif" />
-    <Content Include="Content\img\giphy-1.gif" />
-    <Content Include="Content\img\giphy.gif" />
+    <Content Include="Content\img\1.jpg" />
+    <Content Include="Content\img\2.jpg" />
+    <Content Include="Content\img\3.jpg" />
+    <Content Include="Content\img\4.jpg" />
+    <Content Include="Content\img\5.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -236,12 +236,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dashboard.css" />
+    <Content Include="Content\img\6.jpg" />
     <Content Include="Content\img\ajax-loader.gif" />
     <Content Include="Content\img\all.jpg" />
     <Content Include="Content\img\bottleholding.jpg" />
     <Content Include="Content\img\burinja.jpg" />
     <Content Include="Content\img\buyingwine.jpg" />
     <Content Include="Content\img\degustacija.jpg" />
+    <Content Include="Content\img\girls.jpg" />
     <Content Include="Content\img\grapeeeeees.jpg" />
     <Content Include="Content\img\grozje.jpg" />
     <Content Include="Content\img\img grapes\Cabernet-Sauvignon-Wine-Bottle-WineFolly-3eb4138.jpg" />
@@ -259,7 +261,6 @@
     <Content Include="Content\img\img grapes\Sauvignon-Blanc-Wine-Bottle-WineFolly-3eb4138 %281%29.jpg" />
     <Content Include="Content\img\img grapes\Syrah-Wine-Bottle-WineFolly-3eb4138.jpg" />
     <Content Include="Content\img\index.jpg" />
-<<<<<<< HEAD
     <Content Include="Content\img\png\facebook_circle-512.png" />
     <Content Include="Content\img\png\Google-plus-circle-icon-png.png" />
     <Content Include="Content\img\png\linkedin-icon-png-circle-2.png" />
@@ -267,14 +268,13 @@
     <Content Include="Content\img\png\twitter.png" />
     <Content Include="Content\img\png\youtube png.png" />
     <Content Include="Content\img\red.jpg" />
-=======
->>>>>>> 31b609b6aa9e7ac9899063c65f9e5ba7f6bf5feb
     <Content Include="Content\img\rose.jpg" />
     <Content Include="Content\img\serving wine.jpg" />
     <Content Include="Content\img\img grapes\wine basics.png" />
+    <Content Include="Content\img\sparkling.jpg" />
+    <Content Include="Content\img\white.jpg" />
     <Content Include="Content\img\wineandfood.jpg" />
     <Content Include="Content\img\winecard1.jpg" />
-    <Content Include="Content\img\XdW7P6a.gif" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
