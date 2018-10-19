@@ -255,7 +255,8 @@ namespace Winery.Controllers.Admin
 
                 _wineRepository.Update(wine);
 
-            return Json(new { success = true, message = "Success" }, JsonRequestBehavior.AllowGet);
+            //return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            return RedirectToAction("Index");
 
 
 

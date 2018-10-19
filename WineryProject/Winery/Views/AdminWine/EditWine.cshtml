@@ -78,28 +78,32 @@
     </div>
 
     <div class="form-group row py-5">
-        @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label h5 col-md-3 text-right" })
-        @Html.TextBoxFor(model => model.ImagePath, new { id = "txtImagePath" })
-        @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.ImagePath)" class="" height="200" width="150" />
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label h5 col-md-3 text-right" })
+            @Html.TextBoxFor(model => model.File, new { type = "file", @class = "control-label h5 col-md-3", id = "txtFile" })
+            @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+        </div>
     </div>
-    <img src="@Url.Content(Model.ImagePath)" class="img-fluid" />
 
-    @*<div class="form-group row py-5">
-        @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label h5 col-md-3 text-right" })
-        @Html.TextBoxFor(model => model.File, new { type = "file", @class = "control-label h5 col-md-3", id = "txtFile" })
-        @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
-    </div>*@
+    <div class="row">
+        <div class="col-md-6">
+            <input type="submit" value="Save changes" class="btn btn-info btn-lg btn-block" />
+        </div>
+    </div>
+    <div class="col-md-4 mt-2">
+        <a href="@Url.Action("details","AdminWine")?id=@Model.WineID" class="btn btn-info btn-lg">BACK</a>
+    </div>
+
 </form>
+
 <div id="msgAlert"></div>
-    <a class="btn btn-info" onclick="saveWine()">SAVE</a>
+@*<a class="btn btn-info" onclick="saveWine()">SAVE</a>*@
 
 
-
-    <div>
-        <a href="@Url.Action("details","AdminWine")?id=@Model.WineID">BACK</a>
-    </div>
-
-    <script>
+<script>
     function saveWine() {
         var name = $("#txtName").val();
         var vintage = $("#txtVintage").val();
@@ -116,20 +120,17 @@
         var data = {
             WineID: id, Name: name, Vintage: vintage,
             Description: description, TypeID: type, RegionID: region, CountryID: country,
-            BottleSizeID: bottlesize, SubTypeID: subtype, Price: price, File: file,ImagePath:imagepath
+            BottleSizeID: bottlesize, SubTypeID: subtype, Price: price, /*File: file,ImagePath:imagepath*/
         };
         $.ajax({
             url: '@Url.Action("UpdateWine","AdminWine")',
              type: "POST",
              data: data,
 
-            success: function (response) { 
-              
+            success: function (response) {
                 alert("Succesfully edited");
-               
-
-             }
+            }
 
         });
     }
-    </script>
+</script>
